@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SQL_Query_Get_Menu_Principal" xml:space="preserve">
+    <value>SELECT * FROM BDI_C_GR_MENU_PRINCIPAL WHERE B_FLAG_MENU = 1 ORDER BY N_ORDEN_MENU;</value>
+  </data>
+  <data name="SQL_Query_Get_SubMenu_Principal" xml:space="preserve">
+    <value>SELECT * FROM BDI_C_GR_SUBMENU_PRINCIPAL WHERE N_ID_MENU = {0} AND B_FLAG_SUBMENU = 1 ORDER BY N_ORDEN_SUBMENU;</value>
+  </data>
+  <data name="SQL_Query_Get_Imagenes" xml:space="preserve">
+    <value>SELECT * FROM BDI_C_GR_CAT_IMAGENES WHERE N_ID_TIPO_ELEMENTO_IMG = {0} AND B_FLAG_IMG = 1 ORDER BY N_ID_IMG;</value>
+  </data>
+  <data name="SQL_Query_Get_Banners" xml:space="preserve">
+    <value>SELECT BDI_C_GR_BANNER.N_ID_BANNER,BDI_C_GR_CAT_IMAGENES.T_PATH_IMG AS RUTA_IMAGEN , 
+		BDI_C_GR_BANNER.B_FLAG_BANNER, BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO ,BDI_C_GR_BANNER.T_URL_BANNER,BDI_C_GR_BANNER.T_VALOR_TITLE_BANNER
+from BDI_C_GR_BANNER
+     INNER JOIN BDI_C_GR_CAT_IMAGENES	 
+ON BDI_C_GR_BANNER.N_ID_IMG_BANNER = BDI_C_GR_CAT_IMAGENES.N_ID_IMG 
+	INNER JOIN BDI_C_GR_TIPO_ELEMENTOS
+ON BDI_C_GR_BANNER.N_ID_TIPO_ELEMENTO_BANNER = BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO</value>
+  </data>
+  <data name="SQL_Query_Get_Destacados" xml:space="preserve">
+    <value>SELECT  BDI_C_GR_DESTACADOS.N_ID_DESTACADOS,BDI_C_GR_DESTACADOS.T_VALOR_DESTACADOS, BDI_C_GR_DESTACADOS.N_ORDEN_DESTACADOS, BDI_C_GR_CAT_IMAGENES.T_PATH_IMG AS RUTA_IMAGEN,
+		BDI_C_GR_DESTACADOS.B_FLAG_DESTACADOS, BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO , BDI_C_GR_DESTACADOS.T_URL_DESTACADOS, BDI_C_GR_DESTACADOS.T_ID_MODAL_DESTACADOS, BDI_C_GR_DESTACADOS.T_DSC_DESTACADOS
+from BDI_C_GR_DESTACADOS
+     INNER JOIN BDI_C_GR_CAT_IMAGENES	 
+ON BDI_C_GR_DESTACADOS.N_ID_IMG_DESTACADOS = BDI_C_GR_CAT_IMAGENES.N_ID_IMG 
+	INNER JOIN BDI_C_GR_TIPO_ELEMENTOS
+ON BDI_C_GR_DESTACADOS.N_ID_TIPO_ELEMENTO_DESTACADOS = BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO
+WHERE B_FLAG_DESTACADOS = 1 ORDER BY N_ORDEN_DESTACADOS</value>
+  </data>
+  <data name="SQL_Query_Get_Frecuentes" xml:space="preserve">
+    <value>SELECT  BDI_C_GR_FRECUENTES.N_ID_FRECUENTES,BDI_C_GR_FRECUENTES.T_VALOR_FRECUENTES, BDI_C_GR_FRECUENTES.N_ORDEN_FRECUENTES, BDI_C_GR_CAT_IMAGENES.T_PATH_IMG AS RUTA_IMAGEN,
+		BDI_C_GR_FRECUENTES.B_FLAG_FRECUENTES, BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO , BDI_C_GR_FRECUENTES.T_URL_FRECUENTES
+from BDI_C_GR_FRECUENTES
+     INNER JOIN BDI_C_GR_CAT_IMAGENES	 
+ON BDI_C_GR_FRECUENTES.N_ID_IMG_FRECUENTES = BDI_C_GR_CAT_IMAGENES.N_ID_IMG 
+	INNER JOIN BDI_C_GR_TIPO_ELEMENTOS
+ON BDI_C_GR_FRECUENTES.N_ID_TIPO_ELEMENTO_FRECUENTES = BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO
+WHERE B_FLAG_FRECUENTES = 1 and T_DSC_FRECUENTES like 'frecuentes'  ORDER BY N_ORDEN_FRECUENTES</value>
+  </data>
+  <data name="SQL_Query_Get_Frecuentes_Aplicaciones" xml:space="preserve">
+    <value>SELECT * FROM BDI_C_GR_FRECUENTES WHERE B_FLAG_FRECUENTES = 1 and T_DSC_FRECUENTES like 'aplicaciones'  ORDER BY N_ORDEN_FRECUENTES</value>
+  </data>
+  <data name="SQL_Query_Get_Saber" xml:space="preserve">
+    <value>SELECT BDI_C_GR_SABER.N_ID_SABER, BDI_C_GR_SABER.T_TITULO_SABER, BDI_C_GR_SABER.T_DSC_SABER, BDI_C_GR_SABER.N_ORDEN_SABER,
+		BDI_C_GR_SABER.T_URL_SABER, BDI_C_GR_SABER.T_ICONO_SABER, BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO, BDI_C_GR_SABER.B_FLAG_SABER 
+from BDI_C_GR_SABER
+	INNER JOIN BDI_C_GR_TIPO_ELEMENTOS
+ON BDI_C_GR_SABER.N_ID_TIPO_ELEMENTO_SABER = BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO 
+where BDI_C_GR_SABER.B_FLAG_SABER = 1 order by BDI_C_GR_SABER.N_ORDEN_SABER</value>
+  </data>
+  <data name="SQL_Query_Get_Years" xml:space="preserve">
+    <value>Select * from BDI_C_GR_CAT_YEAR where B_FLAG_YEAR =1 order by N_VALOR_YEAR desc</value>
+  </data>
+  <data name="SQL_Query_Get_Memoria" xml:space="preserve">
+    <value>SELECT 
+MF.ID_MEMORIA_FOTOGRAFICA,
+MF.ID_FK_EVENTO,
+CE.T_VALOR_EVENTO,
+CE.T_DSC_EVENTO,
+MF.ID_FK_YEAR,
+MF.ID_FK_IMG,
+CI.T_PATH_IMG
+FROM BDI_C_GR_MEMORIA_FOTOGRAFICA MF
+INNER JOIN BDI_C_GR_CAT_EVENTO CE ON CE.ID_EVENTO = MF.ID_FK_EVENTO
+INNER JOIN BDI_C_GR_CAT_IMAGENES CI ON CI.N_ID_IMG = MF.ID_FK_IMG
+WHERE MF.ID_FK_YEAR = {0} AND MF.B_FLAG_MEMORIA_FOTOGRAFICA = 1</value>
+  </data>
+</root>
