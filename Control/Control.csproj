@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>D:\Proyectos\Solución\Intranet_version_2\Intranet_Evento_Ajax\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -50,12 +47,15 @@
   <ItemGroup>
     <Compile Include="Data\Entity\BDI_C_GR_CAT_IMAGENES.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_CAT_YEAR.cs" />
+    <Compile Include="Data\Entity\BDI_C_GR_CONTENIDO_AREAS.cs" />
+    <Compile Include="Data\Entity\BDI_C_GR_MENU_AREAS.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_MENU_PRINCIPAL.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_FRECUENTES.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_SABER.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_SUBMENU_PRINCIPAL.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_BANNER.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_DESTACADOS.cs" />
+    <Compile Include="Data\Entity\EntMenuAreas.cs" />
     <Compile Include="Data\Entity\EntResponse.cs" />
     <Compile Include="Data\Entity\GET_LIST_MEMORIA_FOTOGRAFIA_.cs" />
     <Compile Include="Data\Entity\JOIN_DESTACADOS_TIPO_IMAGEN.cs" />
@@ -63,12 +63,18 @@
     <Compile Include="Data\Entity\JOIN_BANNER_TIPO_IMAGEN.cs" />
     <Compile Include="Data\Entity\JOIN_MEMORIA_FOTOGRAFICA.cs" />
     <Compile Include="Data\Entity\JOIN_SABER_TIPO_IMAGEN.cs" />
+    <Compile Include="Data\Enum\EnumAreas.cs" />
     <Compile Include="Data\Enum\EnumNumeric.cs" />
     <Compile Include="Data\Enum\EnumTipoElemento.cs" />
-    <Compile Include="Negocio\ctrlConexion.cs" />
-    <Compile Include="Negocio\ctrlGeneric.cs" />
-    <Compile Include="Negocio\ctrlOperacionesBasicas.cs" />
+    <Compile Include="Negocio\CtrlConexion.cs" />
+    <Compile Include="Negocio\CtrlGeneric.cs" />
+    <Compile Include="Negocio\CtrlOperacionesBasicas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Res_General.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res_General.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Res_Paint_HTML.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +94,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Res_General.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res_General.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Res_Paint_HTML.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Res_Paint_HTML.Designer.cs</LastGenOutput>

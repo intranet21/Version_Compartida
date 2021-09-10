@@ -7,9 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Intranet.Areas {
-    
-    
-    public partial class CGPEPE {
-    }
+namespace Intranet.Areas
+{
+
+
+	public partial class CGPEPE
+	{
+
+		/// <summary>
+		/// Control ContentInitial.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContentInitial;
+	}
 }

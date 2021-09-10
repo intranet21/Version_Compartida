@@ -1,11 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Areas.master.cs" Inherits="Intranet.Areas.Master_Areas" %>
-
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Intranet CONSAR</title>
+    <title>Intranet CONSAR | Áreas</title>
     <meta charset="UTF-8" lang="es" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,9 +20,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <%--Navbar menú--%>
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark double-nav bg-dark">
-                <a class="navbar-brand" href="Default.aspx">
+                <a class="navbar-brand" href="../Inicio.aspx">
                     <img src="http://intranet/Recursos/Imagenes/iconos/logo_consarT.png" style="width: 60px!important;" alt="logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"
@@ -35,33 +34,38 @@
                     <ul id="ulMenu" class="navMenu navbar-nav ml-auto" runat="server"></ul>
                 </div>
             </nav>
-            <div id="pageCarousel" class="carousel slide" data-ride="carousel" runat="server">
-            </div>
         </header>
-        <div class="main mt-5"">                                
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-            </asp:ContentPlaceHolder>
-                            
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>                  
-        </div>
-        <div>
-
-            <%-- Meter contenido con el menú --%>
-
-            
+        <div class="main mt-5"">                 
+            <%-- Place para mostrar el menú --%>             
+            <section class="menu">
+                <img id="imgGeneric" runat="server" src="http://intranet/Recursos/Imagenes/" />
+                <div class="d-flex align-items-center" style="width: 90%;">
+                    <input type="text" class="form-control ">
+                    <div class="input-group-prepend">
+                        <span class="pl-1 fa fa-search"></span>
+                    </div>
+                </div>
+                <ul id="ulMenuLeft" runat="server" class="main-menu mt-2 w-100" role="tablist"></ul>
+            </section>
+            <%--Placeholder para mostrar el contenido--%>
+            <section class="contenido">
+                <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+                </asp:ContentPlaceHolder>
+                 <footer>
+                    <div class="social-section"></div>
+                    <div class="up-footer">
+                        <div class="footer-line">
+                            <p> CONSAR <a href="../inicio.aspx">INTRANET</a>. Derechos Reservados Privados.</p>
+                        </div>
+                    </div>
+                </footer>
+            </section>              
         </div>
     </form>
     <%----JS 2020------%>
     <script src="../resources/js/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="../resources/js/popper.min.js" type="text/javascript"></script>
     <script src="../resources/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../resources/js/lightbox.min.js" type="text/javascript"></script>
-    <script src="../resources/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="../resources/js/pdf.min.js"></script>
-    <script src="../resources/js/Galeria.js" type="text/javascript"></script>
-    <script src="../resources/js/jsPrototypes.min.js" type="text/javascript"></script>
-    <script src="../resources/js/sweetalert.min.js"></script>
-    <script src="../resources/js/master.js" type="text/javascript"></script>
+    <script src="../resources/js/masters_areas.js" type="text/javascript"></script>
 </body>
 </html>

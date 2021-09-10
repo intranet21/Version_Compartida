@@ -19,7 +19,7 @@ namespace Control.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Res_Paint_HTML {
@@ -57,6 +57,51 @@ namespace Control.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot; data-toggle=&quot;menu&quot; data-title=&quot;{1}&quot; data-type=&quot;{2}&quot; data-idMenu=&quot;{3}&quot;&gt; &lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt; &lt;/li&gt;.
+        /// </summary>
+        public static string PAINT_AREAS_OPTION_CONTENT {
+            get {
+                return ResourceManager.GetString("PAINT_AREAS_OPTION_CONTENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot;&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;{1}&lt;/li&gt;.
+        /// </summary>
+        public static string PAINT_AREAS_OPTION_HOVER {
+            get {
+                return ResourceManager.GetString("PAINT_AREAS_OPTION_HOVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot; data-toggle=&quot;modal-generic&quot; aria-controls=&quot;ct-radiografias&quot; modal-id=&quot;radiografia_vo&quot;&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;.
+        /// </summary>
+        public static string PAINT_AREAS_OPTION_MODAL {
+            get {
+                return ResourceManager.GetString("PAINT_AREAS_OPTION_MODAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot; data-toggle=&quot;menu&quot; data-type=&quot;{3}&quot; data-title=&quot;{1}&quot; data-url=&quot;{2}&quot;&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;.
+        /// </summary>
+        public static string PAINT_AREAS_OPTION_PDF {
+            get {
+                return ResourceManager.GetString("PAINT_AREAS_OPTION_PDF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot; onclick=&quot;window.open(document.getElementById(&apos;opt_{1}&apos;).href);return false;&quot; &gt;&lt;a id=&quot;opt_{1}&quot; href=&quot;{2}&quot;&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;.
+        /// </summary>
+        public static string PAINT_AREAS_OPTION_REDIRECT {
+            get {
+                return ResourceManager.GetString("PAINT_AREAS_OPTION_REDIRECT", resourceCulture);
             }
         }
         
@@ -123,6 +168,15 @@ namespace Control.Properties {
         public static string PAINT_CARRUSEL_PRINCIPAL {
             get {
                 return ResourceManager.GetString("PAINT_CARRUSEL_PRINCIPAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;tab-pane fade show active&quot; id=&quot;ct_{0}&quot;&gt;&lt;div class=&quot;tab-contenedor-title&quot;&gt; &lt;h1&gt;{1}&lt;/h1&gt; &lt;/div&gt;&lt;div class=&quot;tab-contenedor-body&quot;&gt;&lt;object data=&quot;{2}&quot;&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;.
+        /// </summary>
+        public static string PAINT_CONTENT_TYPE_PDF {
+            get {
+                return ResourceManager.GetString("PAINT_CONTENT_TYPE_PDF", resourceCulture);
             }
         }
         
@@ -245,7 +299,7 @@ namespace Control.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;li class=&quot;nav-item active liMenu&quot;&gt;&lt;a class=&quot;nav-link cursor-pointer&quot;&gt;{0}&lt;/a&gt;{1} &lt;/li&gt;.
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;nav-item active liMenu&quot;&gt;&lt;a href=&quot;{2}&quot; class=&quot;nav-link cursor-pointer&quot;&gt;{0}&lt;/a&gt;{1} &lt;/li&gt;.
         /// </summary>
         public static string PAINT_MENU_PRINCIPAL {
             get {

@@ -9,6 +9,7 @@
 body {
     overflow-x: hidden;
     background-image: url(http://intranet/Recursos/Imagenes/Areas/slide2.jpg);
+    background-color: #dddddd;
     background-size: cover;
     height: 100vh;
     font-size: 14px;
@@ -40,6 +41,14 @@ ul {
 img {
     width: 100%;
     height: auto;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
 }
 
 /* ============================================== */

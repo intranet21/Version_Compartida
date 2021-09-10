@@ -49,8 +49,6 @@ $(document).ready(function () {
     });
 });
 
-
-
 function init(){
     $('[data-toggle="tooltip"]').tooltip();
     $(".carousel").carousel({ interval: 3000});
@@ -94,8 +92,6 @@ function init(){
         }
     });
 }
-
-
 
 // Gallery
 async function CreateGaleria(_id) {

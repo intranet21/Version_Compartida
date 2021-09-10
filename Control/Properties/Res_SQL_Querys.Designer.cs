@@ -19,7 +19,7 @@ namespace Control.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Res_SQL_Querys {
@@ -72,6 +72,15 @@ namespace Control.Properties {
         public static string SQL_Query_Get_Banners {
             get {
                 return ResourceManager.GetString("SQL_Query_Get_Banners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SELECT * FROM BDI_C_GR_CONTENIDO_AREAS WHERE N_FK_MENU_AREAS = {0} AND B_FLAG_CONTENT = 1;.
+        /// </summary>
+        public static string SQL_Query_Get_Content_For_Menu_Area {
+            get {
+                return ResourceManager.GetString("SQL_Query_Get_Content_For_Menu_Area", resourceCulture);
             }
         }
         
@@ -138,6 +147,16 @@ namespace Control.Properties {
         public static string SQL_Query_Get_Memoria {
             get {
                 return ResourceManager.GetString("SQL_Query_Get_Memoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SELECT * FROM BDI_C_GR_MENU_AREAS WHERE N_FK_AREAS = {0} AND B_FLAG_MENU = 1
+        ///ORDER BY N_ID_AREAS ASC;.
+        /// </summary>
+        public static string SQL_Query_Get_Menu_Areas {
+            get {
+                return ResourceManager.GetString("SQL_Query_Get_Menu_Areas", resourceCulture);
             }
         }
         

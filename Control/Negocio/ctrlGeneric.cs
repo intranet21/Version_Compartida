@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Control.Negocio
 {
-    public static class ctrlGeneric
+    public static class CtrlGeneric
     {
         public static String toolError = String.Empty;
         public static List<T> FromDataTableToList<T>(this DataTable datatable) where T : new()
@@ -18,7 +18,7 @@ namespace Control.Negocio
                 List<string> columnsNames = new List<string>();
                 foreach (DataColumn column in (InternalDataCollectionBase)datatable.Columns)
                     columnsNames.Add(column.ColumnName);
-                return datatable.AsEnumerable().ToList<DataRow>().ConvertAll<T>((Converter<DataRow, T>)(row => ctrlGeneric.getObject<T>(row, columnsNames)));
+                return datatable.AsEnumerable().ToList<DataRow>().ConvertAll<T>((Converter<DataRow, T>)(row => CtrlGeneric.getObject<T>(row, columnsNames)));
             }
             catch (Exception _e)
             {
@@ -37,7 +37,7 @@ namespace Control.Negocio
                 foreach (DataColumn column in (InternalDataCollectionBase)_data.Columns)
                     columnsNames.Add(column.ColumnName);
                 foreach (DataRow rows in _data.Rows)
-                    objEntity = ctrlGeneric.getObject<T>(rows, columnsNames);
+                    objEntity = CtrlGeneric.getObject<T>(rows, columnsNames);
                 return objEntity;
             }
             catch (Exception _e)

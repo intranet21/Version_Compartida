@@ -8,20 +8,20 @@ using System.Text;
 
 namespace Control.Negocio
 {
-    public class ctrlConexion
+    public class CtrlConexion
     {
         #region [ Variables ]
         private SqlConnection sqlConexion = null;
         private SqlCommand sqlComando = null;
-        private string cadenaConexion = ConfigurationManager.ConnectionStrings["default"].ConnectionString.ToString();
-        private string strError = String.Empty;
-        #endregion
+        private readonly string cadenaConexion = ConfigurationManager.ConnectionStrings["default"].ConnectionString.ToString();
+		private string strError = String.Empty;
+		#endregion
 
-        #region [ Conectar y Desconectar ]
-        /// <summary>
-        /// SQL
-        /// </summary>
-        private void sqlConectar()
+		#region [ Conectar y Desconectar ]
+		/// <summary>
+		/// SQL
+		/// </summary>
+		private void SQLConnect()
         {
             try
             {
@@ -46,7 +46,7 @@ namespace Control.Negocio
             }
         }
 
-        public void sqlDesconectar()
+        public void SQLDisconnection()
         {
             try
             {
@@ -76,20 +76,22 @@ namespace Control.Negocio
         /// Guarda el comando para el seteo de parámetros y la posterior ejecución.
         /// </summary>
         /// <param name="sentenciaSQL">La sentencia SQL con el formato: SENTENCIA [param = @param,]</param>
-        public void sCrearComando(string sentenciaSQL)
+        public void SQLCreateCommand(string sentenciaSQL)
         {
-            sqlComando = new SqlCommand();
-            sqlComando.Connection = sqlConexion;
-            sqlComando.CommandType = CommandType.Text;
-            sqlComando.CommandText = sentenciaSQL;
-        }
+			sqlComando = new SqlCommand
+			{
+				Connection = sqlConexion,
+				CommandType = CommandType.Text,
+				CommandText = sentenciaSQL
+			};
+		}
 
         /// <summary>
         /// Ejecuta el comando creado y retorna el resultado de la consulta.
         /// </summary>
         /// <returns>El resultado de la consulta.</returns>
         /// <exception cref="Exception">Si ocurre un error al ejecutar la consulta.</exception>
-        public DataTable sEjecutarConsultaDT()
+        public DataTable SQLExecuteSearchDT()
         {
             GC.Collect();
             DataTable sdt = null;
@@ -112,15 +114,15 @@ namespace Control.Negocio
             return sdt;
         }
 
-        public DataTable sqlEjecutaQuery(string query)
+        public DataTable SQLExecuteQuery(string query)
         {
             GC.Collect();
             DataTable dt = new DataTable();
             try
             {
-                sqlConectar();
-                sCrearComando(query);
-                dt = sEjecutarConsultaDT();
+                SQLConnect();
+                SQLCreateCommand(query);
+                dt = SQLExecuteSearchDT();
             }
             catch (Exception ex)
             {
@@ -129,7 +131,7 @@ namespace Control.Negocio
             finally
             {
                 GC.GetTotalMemory(true);
-                sqlDesconectar();
+                SQLDisconnection();
             }
             return dt;
         }

@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="PAINT_AREAS_OPTION_CONTENT" xml:space="preserve">
+    <value>&lt;li class="drop" data-toggle="menu" data-title="{1}" data-type="{2}" data-idMenu="{3}"&gt; &lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt; &lt;/li&gt;</value>
+  </data>
+  <data name="PAINT_AREAS_OPTION_HOVER" xml:space="preserve">
+    <value>&lt;li class="drop"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;{1}&lt;/li&gt;</value>
+  </data>
+  <data name="PAINT_AREAS_OPTION_MODAL" xml:space="preserve">
+    <value>&lt;li class="drop" data-toggle="modal-generic" aria-controls="ct-radiografias" modal-id="radiografia_vo"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</value>
+  </data>
+  <data name="PAINT_AREAS_OPTION_PDF" xml:space="preserve">
+    <value>&lt;li class="drop" data-toggle="menu" data-type="{3}" data-title="{1}" data-url="{2}"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</value>
+  </data>
+  <data name="PAINT_AREAS_OPTION_REDIRECT" xml:space="preserve">
+    <value>&lt;li class="drop" onclick="window.open(document.getElementById('opt_{1}').href);return false;" &gt;&lt;a id="opt_{1}" href="{2}"&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</value>
+  </data>
   <data name="PAINT_BANNER_CONTROLES" xml:space="preserve">
     <value>&lt;a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev"&gt;
                         &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
@@ -147,6 +162,9 @@
   </data>
   <data name="PAINT_CARRUSEL_PRINCIPAL" xml:space="preserve">
     <value>&lt;div class="carousel-item {0}"&gt;&lt;img src="{1}" class="d-block w-100" alt="..."&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="PAINT_CONTENT_TYPE_PDF" xml:space="preserve">
+    <value>&lt;div class="tab-pane fade show active" id="ct_{0}"&gt;&lt;div class="tab-contenedor-title"&gt; &lt;h1&gt;{1}&lt;/h1&gt; &lt;/div&gt;&lt;div class="tab-contenedor-body"&gt;&lt;object data="{2}"&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;</value>
   </data>
   <data name="PAINT_DESTACADOS_DATA_TYPE" xml:space="preserve">
     <value />
@@ -241,7 +259,7 @@
                         &lt;/div&gt;</value>
   </data>
   <data name="PAINT_MENU_PRINCIPAL" xml:space="preserve">
-    <value>&lt;li class="nav-item active liMenu"&gt;&lt;a class="nav-link cursor-pointer"&gt;{0}&lt;/a&gt;{1} &lt;/li&gt;</value>
+    <value>&lt;li class="nav-item active liMenu"&gt;&lt;a href="{2}" class="nav-link cursor-pointer"&gt;{0}&lt;/a&gt;{1} &lt;/li&gt;</value>
   </data>
   <data name="PAINT_OPCIONES_YEAR" xml:space="preserve">
     <value>&lt;a id="{0}" class="dropdown-item chanGaleria"&gt;{1}&lt;/a&gt;</value>

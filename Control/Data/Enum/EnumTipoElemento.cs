@@ -13,6 +13,11 @@ namespace Control.Data.Enum
         CARRUSEL = 3,
         BANNERS = 4,
         INFOGRAFIAS = 5,
-        DATA_TYPE = 6
+        DATA_TYPE = 6,
+        FRECUENTES = 7,
+        DESTACADOS = 8,
+        MEMORIA_FOTOGRAFICA = 9,
+        PDF = 10,
+        CONTENT = 11
     }
 }

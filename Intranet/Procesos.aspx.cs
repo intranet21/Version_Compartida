@@ -14,7 +14,7 @@ namespace Intranet
     public partial class Procesos : System.Web.UI.Page
     {
         private static EntResponse msj = null;
-        private static ctrlOperacionesBasicas ctrl = new ctrlOperacionesBasicas();
+        private readonly static CtrlOperacionesBasicas ctrl = new CtrlOperacionesBasicas();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -41,12 +41,12 @@ namespace Intranet
         }
 
         [WebMethod(EnableSession = true)]
-        public static String getListGallery(String _year)
+        public static String GetListGallery(String _year)
         {
             GC.Collect();
             try
             {
-                List<GET_LIST_MEMORIA_FOTOGRAFIA_> list = ctrl.listGetMemoriaFoto(Convert.ToInt32(_year));
+                List<GET_LIST_MEMORIA_FOTOGRAFIA_> list = ctrl.ListGetMemoriaFotos(Convert.ToInt32(_year));
                 msj = new EntResponse { Mensaje = "", body = JsonConvert.SerializeObject(list), status = 200 };
                 return JsonConvert.SerializeObject((object)msj, (Formatting)1);
             }
@@ -64,7 +64,32 @@ namespace Intranet
             {
                 GC.GetTotalMemory(true);
             }
+        }
 
+        [WebMethod(EnableSession = true)]
+        public static String GetListContentArea(String _idMenuArea)
+        {
+            GC.Collect();
+            try
+            {
+                List< BDI_C_GR_CONTENIDO_AREAS> list = ctrl.ListGetContentAreas(Convert.ToInt32(_idMenuArea));
+                msj = new EntResponse { Mensaje = "", body = JsonConvert.SerializeObject(list), status = 200 };
+                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
+            }
+            catch (Exception ex)
+            {
+                msj = new EntResponse
+                {
+                    Mensaje = "Error: " + ex.Message,
+                    status = 500,
+                    body = ""
+                };
+                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
+            }
+            finally
+            {
+                GC.GetTotalMemory(true);
+            }
         }
     }
 }
