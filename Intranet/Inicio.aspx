@@ -2200,7 +2200,6 @@
             <div class="modal-content">
                 <div class="modal-header text-center" style="background: #092642;">
                     <h5 class="modal-title">Balanced Scored</h5>
-                    </button>
                 </div>
                 <div class="modal-body">
                     <div id="contentBalance" class="rowBalance overflow-y">
@@ -2455,7 +2454,7 @@
                     <h5 class="modal-title">ECCO</h5>
                 </div>
                 <div class="modal-body overflow-y" style="max-height: 430px;">
-                    <object data="pdf/saber/ecco/ecco_2021.pdf" width="100%" height="390px" class="objh"></object>
+                    <object data="pdf/saber/ecco/ecco_2021.pdf" width="100" height="390" class="objh"></object>
                 </div>                
                 <div class="modal-footer" style="justify-content: center; background: #E6394C;">
                     <button id="btnBackPublic" type="button" class="btn btn-warning " title="regresar"
@@ -2476,6 +2475,5 @@
     <script src="resources/js/jsPrototypes.min.js" type="text/javascript"></script>
     <script src="resources/js/sweetalert.min.js"></script>
     <script src="resources/js/master.js" type="text/javascript"></script>
-    <script src="resources/js/masters_areas.js" type="text/javascript"></script>
 </body>
 </html>
