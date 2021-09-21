@@ -70,6 +70,15 @@ namespace Control.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot; data-toggle=&quot;menu&quot; data-title=&quot;{1}&quot; data-type=&quot;{2}&quot; data-idMenu=&quot;{3}&quot;&gt; &lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt; &lt;/li&gt;.
+        /// </summary>
+        public static string PAINT_AREAS_OPTION_FUNCTIONS {
+            get {
+                return ResourceManager.GetString("PAINT_AREAS_OPTION_FUNCTIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot;&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;{1}&lt;/li&gt;.
         /// </summary>
         public static string PAINT_AREAS_OPTION_HOVER {
@@ -295,6 +304,54 @@ namespace Control.Properties {
         public static string PAINT_FRECUENTES_REDIRECT {
             get {
                 return ResourceManager.GetString("PAINT_FRECUENTES_REDIRECT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;tab-pane fade {2}&quot; id=&quot;nav{0}&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;nav{0}-tab&quot;&gt;
+        ///    &lt;div class=&quot;m-5 text-justify&quot;&gt;
+        ///        {1}
+        ///    &lt;/div&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string PAINT_FUNCTIONS_BODY {
+            get {
+                return ResourceManager.GetString("PAINT_FUNCTIONS_BODY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;tab-pane fade show active&quot; id=&quot;ct-funciones&quot;&gt;
+        ///    &lt;div class=&quot;tab-contenedor-title&quot;&gt;
+        ///        &lt;h1&gt;{0}&lt;/h1&gt;
+        ///    &lt;/div&gt;
+        ///    &lt;div class=&quot;tab-contenedor-body border-top-3 border-light&quot; style=&quot;background-color:#616467;&quot;&gt;
+        ///        &lt;div class=&quot;row d-flex justify-content-center&quot;&gt;
+        ///            &lt;div class=&quot;col-10 text-white text-justify  my-5&quot;&gt;
+        ///                {1}
+        ///            &lt;/div&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;div class=&quot;row d-flex justify-content-center&quot;&gt;
+        ///            &lt;div class=&quot;col-11 p-0 bg-white&quot;&gt; [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        public static string PAINT_FUNCTIONS_CONTENT {
+            get {
+                return ResourceManager.GetString("PAINT_FUNCTIONS_CONTENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;{4} nav-item nav-link nav-function {3}&quot; id=&quot;nav{0}-tab&quot; data-toggle=&quot;tab&quot; href=&quot;#nav{0}&quot; role=&quot;tab&quot;
+        ///    aria-controls=&quot;nav{0}&quot; aria-selected=&quot;true&quot;&gt;
+        ///    &lt;span&gt;{2}&lt;/span&gt;
+        ///    &lt;h6&gt;
+        ///        {1}
+        ///    &lt;/h6&gt;
+        ///&lt;/a&gt;.
+        /// </summary>
+        public static string PAINT_FUNCTIONS_HEAD {
+            get {
+                return ResourceManager.GetString("PAINT_FUNCTIONS_HEAD", resourceCulture);
             }
         }
         

@@ -24,7 +24,8 @@ namespace Intranet.Areas
             {
                 Master_Areas.idSeccion = (int)EnumAreas.CGPEPE;
                 EntMenuAreas _ent = ctrl.PaintLeftMenu(Master_Areas.idSeccion);
-                Master_Areas.menu = _ent.menu;
+                Master_Areas.menu = _ent.Menu;
+                this.ContentInitial.InnerHtml = _ent.HtmlInitial.ToString();
             }
         }
         #endregion

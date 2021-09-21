@@ -120,6 +120,9 @@
   <data name="PAINT_AREAS_OPTION_CONTENT" xml:space="preserve">
     <value>&lt;li class="drop" data-toggle="menu" data-title="{1}" data-type="{2}" data-idMenu="{3}"&gt; &lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt; &lt;/li&gt;</value>
   </data>
+  <data name="PAINT_AREAS_OPTION_FUNCTIONS" xml:space="preserve">
+    <value>&lt;li class="drop" data-toggle="menu" data-title="{1}" data-type="{2}" data-idMenu="{3}"&gt; &lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt; &lt;/li&gt;</value>
+  </data>
   <data name="PAINT_AREAS_OPTION_HOVER" xml:space="preserve">
     <value>&lt;li class="drop"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;{1}&lt;/li&gt;</value>
   </data>
@@ -257,6 +260,48 @@
                                 &lt;div style="font-size: 16px;"&gt;&lt;a  href="{1}"&gt;{2}&lt;/a&gt;&lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;</value>
+  </data>
+  <data name="PAINT_FUNCTIONS_BODY" xml:space="preserve">
+    <value>&lt;div class="tab-pane fade {2}" id="nav{0}" role="tabpanel" aria-labelledby="nav{0}-tab"&gt;
+    &lt;div class="m-5 text-justify"&gt;
+        {1}
+    &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="PAINT_FUNCTIONS_CONTENT" xml:space="preserve">
+    <value>&lt;div class="tab-pane fade show active" id="ct-funciones"&gt;
+    &lt;div class="tab-contenedor-title"&gt;
+        &lt;h1&gt;{0}&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div class="tab-contenedor-body border-top-3 border-light" style="background-color:#616467;"&gt;
+        &lt;div class="row d-flex justify-content-center"&gt;
+            &lt;div class="col-10 text-white text-justify  my-5"&gt;
+                {1}
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row d-flex justify-content-center"&gt;
+            &lt;div class="col-11 p-0 bg-white"&gt;
+                &lt;nav&gt;
+                    &lt;div class="nav nav-tabs" id="nav-tab-functions" role="tablist"&gt;
+                        {2}
+                    &lt;/div&gt;
+                &lt;/nav&gt;
+                &lt;div class="tab-content" id="nav-tabContent"&gt;
+                    {3}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="PAINT_FUNCTIONS_HEAD" xml:space="preserve">
+    <value>&lt;a class="{4} nav-item nav-link nav-function {3}" id="nav{0}-tab" data-toggle="tab" href="#nav{0}" role="tab"
+    aria-controls="nav{0}" aria-selected="true"&gt;
+    &lt;span&gt;{2}&lt;/span&gt;
+    &lt;h6&gt;
+        {1}
+    &lt;/h6&gt;
+&lt;/a&gt;</value>
   </data>
   <data name="PAINT_MENU_PRINCIPAL" xml:space="preserve">
     <value>&lt;li class="nav-item active liMenu"&gt;&lt;a href="{2}" class="nav-link cursor-pointer"&gt;{0}&lt;/a&gt;{1} &lt;/li&gt;</value>

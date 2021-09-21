@@ -12,8 +12,16 @@ $(document).ready(function () {
 
         switch (type) {
             case 'CONTENT':
-                let data = await postExecutionAPI('GetListContentArea', { _idMenuArea });
+                let data = JSON.parse(await postExecutionAPI('GetListContentArea', { _idMenuArea }));
                 obj = paintContent(data, title);
+                break;
+            case 'FUNCTION_AREAS':
+                $('.tab-content').each(function () {
+                    if (this.id === 'ContentGeneric')
+                        $(this).addClass('d-none');
+                    else
+                        $(this).removeClass('d-none');
+                });
                 break;
             case 'PDF':
                 obj = `<div class="tab-pane fade show active">
@@ -31,6 +39,9 @@ $(document).ready(function () {
     });
 });
 
+$('.function').on("click", function () {
+    console.log(this.id);
+});
 
 async function postExecutionAPI(method, obj) {
     //Se declara la petición utilizando la herramienta fetch de javascript
@@ -41,13 +52,13 @@ async function postExecutionAPI(method, obj) {
     });
     let data = await _resp.json();
     const { status, body } = JSON.parse(data.d);
-    return (status === 200) ? JSON.parse(body) : null;
+    return (status === 200) ? body : null;
 }
 
 function paintContent(data, title) {
     let content = "", child = "", distinct = data.filter(u => u.N_FK_PADRE === 0);
     distinct.forEach((item, index) => {
-        if (item.N_FK_TIPO_ELEMENTO === 1)
+        if (item.N_FK_TIPO_ELEMENTO === 1 && item.N_FK_TIPO_ELEMENTO === 12)
             content += paintForTypeElement(item);
         else {
             child = subMenu(data, item);
@@ -61,6 +72,11 @@ function paintContent(data, title) {
                 <div id="father_${index}" class="collapse" aria-labelledby="heading_${index}" data-parent="#accordionFather">
                     <div class="card-body">
                         ${child}
+                        ${item.T_LINK_SITE_EXTRA !== null && item.N_FK_TIPO_ELEMENTO !== 15 ? (`<div class="text-center mt-4">
+                            <a href="${item.T_LINK_SITE_EXTRA}" class="btn btn-info font-weight-bold" target="_blank"> Visitar sitio
+                                &nbsp;&nbsp;<i class="fa fa-play faa-horizontal animated" style="color:#1f3a5a"></i>
+                                </a>
+                         </div>`) : ""}
                     </div>
                 </div>
              </div>`;
@@ -68,15 +84,15 @@ function paintContent(data, title) {
     });
 
     return `<div class="tab-pane fade show active">
-                    <div class="tab-contenedor-title">
-                        <h1>${title}</h1>
-                    </div>
-                    <div class="tab-contenedor-body">
-                        <div class="accordion" id="accordionFather">
-                            ${content}
-                        </div>
-                    </div>
-                </div>`;
+        <div class="tab-contenedor-title">
+            <h1>${title}</h1>
+        </div>
+        <div class="tab-contenedor-body">
+            <div class="accordion" id="accordionFather">
+                ${content}
+            </div>
+        </div>
+    </div>`;
 }
 
 function subMenu(list, item) {
@@ -84,7 +100,7 @@ function subMenu(list, item) {
     if (item.N_FK_TIPO_ELEMENTO == 0) {
         child += `<div class="accordion" id="accordionChild_${item.N_ID_CONTENT}">`;
         listsbItem.forEach((sbItem, index) => {
-            if (sbItem.N_FK_TIPO_ELEMENTO === 1)
+            if (sbItem.N_FK_TIPO_ELEMENTO === 1 || sbItem.N_FK_TIPO_ELEMENTO === 15)
                 child += paintForTypeElement(sbItem);
             else {
                 let searchChild = subMenu(list, sbItem);
@@ -97,6 +113,11 @@ function subMenu(list, item) {
                         data-parent="#accordionChild_${idCont}">
                         <div class="card-body">
                             ${searchChild !== "" ? searchChild : paintForTypeElement(sbItem)}
+                            ${sbItem.T_LINK_SITE_EXTRA !== null ? (`<div class="text-center mt-4">
+                                                        <a href="${sbItem.T_LINK_SITE_EXTRA}" class="btn btn-info font-weight-bold" target="_blank"> Visitar sitio
+                                                            &nbsp;&nbsp;<i class="fa fa-play faa-horizontal animated" style="color:#1f3a5a"></i>
+                                                            </a>
+                                                     </div>`) : ""}
                         </div>
                     </div>
                 </div>`;
@@ -129,11 +150,28 @@ function paintForTypeElement(item) {
             return `<object data="${item.T_URL_MENU}" width="100px" height="85px"></object>`;
         //Texto o HTML
         case 15:
-            return item.T_DSC_CONTENT +  item.T_LINK_SITE_EXTRA !== null ? `<div class="text-center mt-4">
+            let content = item.T_DSC_CONTENT;
+            content += item.T_LINK_SITE_EXTRA !== null ? `<div class="text-center mt-4">
                             <a href="${item.T_LINK_SITE_EXTRA}" class="btn btn-info font-weight-bold" target="_blank"> Visitar sitio
                                 &nbsp;&nbsp;<i class="fa fa-play faa-horizontal animated" style="color:#1f3a5a"></i>
                                 </a>
                         </div>` : "";
-            break;
+            return content;
     }
 }
+
+//< !--Modal Generic-- >
+//    <div class="modal fade" id="generic-modal" tabindex="-1" role="dialog" aria-hidden="true">
+//        <div class="modal-dialog modal-lg" role="document">
+//            <div class="modal-content">
+//                <div class="modal-header text-white" style="background: #092642;">
+//                    <h5 class="modal-title text-center w-100" id="genericTitle"></h5>
+//                </div>
+//                <div id="genericObj" class="modal-body overflow-y generic-pdf"></div>
+//                <div class="modal-footer" style="justify-content: center; background: #092642;">
+//                    <button type="button" class="btn btn-light text-dark btn-closse"
+//                        data-dismiss="modal">Cerrar</button>
+//                </div>
+//            </div>
+//        </div>
+//    </div>

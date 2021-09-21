@@ -18,6 +18,10 @@ namespace Control.Data.Enum
         DESTACADOS = 8,
         MEMORIA_FOTOGRAFICA = 9,
         PDF = 10,
-        CONTENT = 11
+        CONTENT = 11,
+        FUNCTION_AREAS = 12,
+        VIDEO = 13,
+        GRID = 14,
+        HTML = 15,
     }
 }

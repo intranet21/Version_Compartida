@@ -314,8 +314,8 @@ namespace Control.Negocio
 					var distinc = list.Where(u => u.N_FK_MENU_PADRE == (int)EnumNumeric.CERO).Distinct().ToList();
 					distinc.ForEach(item =>
 					{
-						if(item.T_VALOR_MENU == "Funciones" || item.T_VALOR_MENU == "Organigrama")
-							_ent.initial = item;
+						if(item.N_ORDEN_MENU == (int)EnumNumeric.UNO)
+							_ent.HtmlInitial = PaintFirstContent(item);
 
 						switch (item.N_FK_TIPO_ELEMENTO_MENU)
 						{
@@ -336,9 +336,13 @@ namespace Control.Negocio
 							case (int)EnumTipoElemento.PDF:
 								sb.AppendFormat(Res_Paint_HTML.PAINT_AREAS_OPTION_PDF, item.T_VALOR_MENU, item.T_DSC_MENU != null ? item.T_DSC_MENU : item.T_VALOR_MENU, item.T_URL_MENU,  EnumTipoElemento.PDF);
 								break;
+							case (int)EnumTipoElemento.FUNCTION_AREAS:
+								sb.AppendFormat(Res_Paint_HTML.PAINT_AREAS_OPTION_FUNCTIONS, item.T_VALOR_MENU, item.T_DSC_MENU != null ? item.T_DSC_MENU : item.T_VALOR_MENU,
+								EnumTipoElemento.FUNCTION_AREAS, item.N_ID_AREAS);
+								break;
 						}
 					});
-					_ent.menu = sb;
+					_ent.Menu = sb;
 				}
 				return _ent;
 			}
@@ -388,7 +392,48 @@ namespace Control.Negocio
 			else
 				return String.Empty;
 		}
-		//Generic modal
+
+		public StringBuilder PaintFirstContent(BDI_C_GR_MENU_AREAS _ent)
+		{
+			StringBuilder sb = new StringBuilder();
+			try
+			{
+				GC.Collect();
+				if (_ent.N_FK_TIPO_ELEMENTO_MENU == (int)EnumTipoElemento.PDF)
+					return sb.AppendFormat(Res_Paint_HTML.PAINT_CONTENT_TYPE_PDF, _ent.N_ID_AREAS, _ent.T_VALOR_MENU, _ent.T_URL_MENU);
+				else if (_ent.N_FK_TIPO_ELEMENTO_MENU == (int)EnumTipoElemento.FUNCTION_AREAS)
+				{
+					List<BDI_C_GR_CONTENIDO_AREAS> list = ListGetContentAreas(_ent.N_ID_AREAS);
+					String ulItems = String.Empty, contItems = String.Empty;
+					if (list != null)
+					{
+						var description = list.Where(u => u.N_FK_PADRE == (int)EnumNumeric.CERO).First().T_DSC_CONTENT;						
+						list.Where(t => t.N_FK_PADRE != 0).ToList().ForEach(item =>
+					    {
+							var cont = item.N_ORDEN_MENU;
+							ulItems += String.Format(Res_Paint_HTML.PAINT_FUNCTIONS_HEAD, item.N_ID_CONTENT,
+								item.T_VALOR_CONTENT, cont, cont == 1 ? "active" : String.Empty, String.Empty);
+							contItems += String.Format(Res_Paint_HTML.PAINT_FUNCTIONS_BODY, item.N_ID_CONTENT,
+								item.T_DSC_CONTENT, cont == 1 ? " show active" : String.Empty);
+							cont++;
+					    });
+						sb.AppendFormat(Res_Paint_HTML.PAINT_FUNCTIONS_CONTENT, _ent.T_VALOR_MENU, description,
+							ulItems, contItems);
+					}
+					return sb;
+				}
+				else 
+				return sb;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally
+			{
+				GC.GetTotalMemory(true);
+			}
+		}
 		#endregion
 	}
 }

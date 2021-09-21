@@ -16,7 +16,6 @@ namespace Intranet.Areas
 	{
 		#region [ VARIABLES ]
 		readonly CtrlOperacionesBasicas ctrl = new CtrlOperacionesBasicas();
-		StringBuilder sb = new StringBuilder();
 		#endregion
 
 		#region [ PAGE LOAD ]
@@ -26,34 +25,10 @@ namespace Intranet.Areas
             {
                 Master_Areas.idSeccion = (int)EnumAreas.PRESIDENCIA;
 				EntMenuAreas _ent = ctrl.PaintLeftMenu(Master_Areas.idSeccion);
-				Master_Areas.menu = _ent.menu;
-				this.PaintFirstContent(_ent.initial);
+				Master_Areas.menu = _ent.Menu;
+				this.ContentInitial.InnerHtml  = _ent.HtmlInitial.ToString();
 			}
         }
-		#endregion
-
-		#region [ Paint first view]
-		public void PaintFirstContent( BDI_C_GR_MENU_AREAS _ent)
-		{
-			try
-			{
-				GC.Collect();
-				if(_ent.N_FK_TIPO_ELEMENTO_MENU == (int)EnumTipoElemento.PDF)
-				{
-					sb.AppendFormat(Res_Paint_HTML.PAINT_CONTENT_TYPE_PDF, _ent.N_ID_AREAS, _ent.T_VALOR_MENU, _ent.T_URL_MENU);
-					this.ContentInitial.InnerHtml = sb.ToString();
-				}
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-			finally
-			{
-				sb.Clear();
-				GC.GetTotalMemory(true);
-			}
-		}
 		#endregion
 	}
 }
