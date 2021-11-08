@@ -59,6 +59,29 @@ namespace Control.Negocio
 			}
 		}
 
+		public List<BDI_C_GR_MODALES> ListGetModal(String _subQuery)
+		{
+			try
+			{
+				GC.Collect();
+				var arr = _subQuery.Split('|');
+				String query = String.Format(Res_SQL_Querys.SQL_Query_Get_Modals, arr[0]+" = "+arr[1]);
+				DataTable dt = objConexion.SQLExecuteQuery(query);
+				if (dt != null && dt.Rows.Count > 0)
+					return CtrlGeneric.FromDataTableToList<BDI_C_GR_MODALES>(dt);
+				else
+					return null;
+			}
+			catch (Exception _e)
+			{
+				throw new Exception("Ha ocurrido un error", _e);
+			}
+			finally
+			{
+				GC.GetTotalMemory(true);
+			}
+		}
+		
 		public List<BDI_C_GR_MENU_AREAS> ListGetMenuAreas(int _idMenu)
 		{
 			try
@@ -80,7 +103,7 @@ namespace Control.Negocio
 				GC.GetTotalMemory(true);
 			}
 		}
-
+		
 		public List<BDI_C_GR_CONTENIDO_AREAS> ListGetContentAreas(int _idMenuArea)
 		{
 			try
@@ -328,7 +351,7 @@ namespace Control.Negocio
 								sb.AppendFormat(Res_Paint_HTML.PAINT_AREAS_OPTION_HOVER, item.T_VALOR_MENU, stItems);
 								break;
 							case (int)EnumTipoElemento.MODAL:
-								sb.AppendFormat(Res_Paint_HTML.PAINT_AREAS_OPTION_MODAL, item.T_VALOR_MENU);
+								sb.AppendFormat(Res_Paint_HTML.PAINT_AREAS_OPTION_MODAL, item.T_VALOR_MENU, item.N_ID_AREAS);
 								break;
 							case (int)EnumTipoElemento.REDIRECT:
 								sb.AppendFormat(Res_Paint_HTML.PAINT_AREAS_OPTION_REDIRECT, item.T_VALOR_MENU, item.N_ID_AREAS, item.T_URL_MENU);

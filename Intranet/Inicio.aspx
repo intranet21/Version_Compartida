@@ -2471,11 +2471,6 @@
     <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="resources/js/lightbox.min.js" type="text/javascript"></script>
     <script src="resources/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="resources/js/pdf.min.js"></script>
-    <script src="resources/js/Galeria.js" type="text/javascript"></script>
-    <script src="resources/js/jsPrototypes.min.js" type="text/javascript"></script>
-    <script src="resources/js/sweetalert.min.js"></script>
     <script src="resources/js/master.js" type="text/javascript"></script>
-    <script src="resources/js/masters_areas.js" type="text/javascript"></script>
 </body>
 </html>

@@ -170,6 +170,15 @@ namespace Control.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a SELECT * FROM [BD_SQL_INTRANET_DESA].[dbo].[BDI_C_GR_MODALES] WHERE {0} AND B_FLAG_MODAL = 1;.
+        /// </summary>
+        public static string SQL_Query_Get_Modals {
+            get {
+                return ResourceManager.GetString("SQL_Query_Get_Modals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a SELECT BDI_C_GR_SABER.N_ID_SABER, BDI_C_GR_SABER.T_TITULO_SABER, BDI_C_GR_SABER.T_DSC_SABER, BDI_C_GR_SABER.N_ORDEN_SABER,
         ///		BDI_C_GR_SABER.T_URL_SABER, BDI_C_GR_SABER.T_ICONO_SABER, BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO, BDI_C_GR_SABER.B_FLAG_SABER 
         ///from BDI_C_GR_SABER

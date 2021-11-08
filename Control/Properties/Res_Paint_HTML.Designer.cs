@@ -88,7 +88,7 @@ namespace Control.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot; data-toggle=&quot;modal-generic&quot; aria-controls=&quot;ct-radiografias&quot; modal-id=&quot;radiografia_vo&quot;&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;.
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;drop&quot; data-toggle=&quot;modal-generic&quot; data-id=&quot;{1}&quot; data-origin=&quot;N_FK_AREAS&quot;&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;.
         /// </summary>
         public static string PAINT_AREAS_OPTION_MODAL {
             get {
@@ -419,7 +419,7 @@ namespace Control.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;li class=&quot;menuChild&quot;&gt;&lt;a data-toggle=&quot;modal&quot; data-target=&quot;{0}&quot;&gt;{1}&lt;/a&gt;&lt;/li&gt;.
+        ///   Busca una cadena traducida similar a &lt;li class=&quot;menuChild&quot;&gt;&lt;a data-toggle=&quot;modal-generic&quot; data-id=&quot;{0}&quot;  data-origin=&quot;N_FK_MENU&quot;&gt;{1}&lt;/a&gt;&lt;/li&gt;.
         /// </summary>
         public static string PAINT_SUBMENU_PRINCIPAL_MODAL {
             get {

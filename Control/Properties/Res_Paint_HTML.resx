@@ -127,7 +127,7 @@
     <value>&lt;li class="drop"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;{1}&lt;/li&gt;</value>
   </data>
   <data name="PAINT_AREAS_OPTION_MODAL" xml:space="preserve">
-    <value>&lt;li class="drop" data-toggle="modal-generic" aria-controls="ct-radiografias" modal-id="radiografia_vo"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</value>
+    <value>&lt;li class="drop" data-toggle="modal-generic" data-id="{1}" data-origin="N_FK_AREAS"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</value>
   </data>
   <data name="PAINT_AREAS_OPTION_PDF" xml:space="preserve">
     <value>&lt;li class="drop" data-toggle="menu" data-type="{3}" data-title="{1}" data-url="{2}"&gt;&lt;a&gt;&lt;span&gt;{0}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</value>
@@ -337,7 +337,7 @@
                 &lt;/div&gt;</value>
   </data>
   <data name="PAINT_SUBMENU_PRINCIPAL_MODAL" xml:space="preserve">
-    <value>&lt;li class="menuChild"&gt;&lt;a data-toggle="modal" data-target="{0}"&gt;{1}&lt;/a&gt;&lt;/li&gt;</value>
+    <value>&lt;li class="menuChild"&gt;&lt;a data-toggle="modal-generic" data-id="{0}"  data-origin="N_FK_MENU"&gt;{1}&lt;/a&gt;&lt;/li&gt;</value>
   </data>
   <data name="PAINT_SUBMENU_PRINCIPAL_REDIRECT" xml:space="preserve">
     <value>&lt;li class="menuChild"&gt;&lt;a href="{0}"&gt;{1}&lt;/a&gt;&lt;/li&gt;</value>

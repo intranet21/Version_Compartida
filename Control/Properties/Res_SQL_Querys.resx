@@ -190,4 +190,7 @@ ORDER BY N_ID_AREAS ASC;</value>
   <data name="SQL_Query_Get_Content_For_Menu_Area" xml:space="preserve">
     <value>SELECT * FROM BDI_C_GR_CONTENIDO_AREAS WHERE N_FK_MENU_AREAS = {0} AND B_FLAG_CONTENT = 1;</value>
   </data>
+  <data name="SQL_Query_Get_Modals" xml:space="preserve">
+    <value>SELECT * FROM [BD_SQL_INTRANET_DESA].[dbo].[BDI_C_GR_MODALES] WHERE {0} AND B_FLAG_MODAL = 1;</value>
+  </data>
 </root>

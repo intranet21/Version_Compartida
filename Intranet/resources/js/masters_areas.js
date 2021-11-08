@@ -12,7 +12,7 @@ $(document).ready(function () {
 
         switch (type) {
             case 'CONTENT':
-                let data = JSON.parse(await postExecutionAPI('GetListContentArea', { _idMenuArea }));
+                let data = JSON.parse(await postExecutionAPI('GetListContentArea',{ _idMenuArea }));
                 obj = paintContent(data, title);
                 break;
             case 'FUNCTION_AREAS':
@@ -42,18 +42,6 @@ $(document).ready(function () {
 $('.function').on("click", function () {
     console.log(this.id);
 });
-
-async function postExecutionAPI(method, obj) {
-    //Se declara la petición utilizando la herramienta fetch de javascript
-    let _resp = await fetch('../Procesos.aspx/' + method, {
-        method: 'POST',
-        body: JSON.stringify(obj),
-        headers: { 'Content-Type': 'application/json' }
-    });
-    let data = await _resp.json();
-    const { status, body } = JSON.parse(data.d);
-    return (status === 200) ? body : null;
-}
 
 function paintContent(data, title) {
     let content = "", child = "", distinct = data.filter(u => u.N_FK_PADRE === 0);
@@ -159,19 +147,3 @@ function paintForTypeElement(item) {
             return content;
     }
 }
-
-//< !--Modal Generic-- >
-//    <div class="modal fade" id="generic-modal" tabindex="-1" role="dialog" aria-hidden="true">
-//        <div class="modal-dialog modal-lg" role="document">
-//            <div class="modal-content">
-//                <div class="modal-header text-white" style="background: #092642;">
-//                    <h5 class="modal-title text-center w-100" id="genericTitle"></h5>
-//                </div>
-//                <div id="genericObj" class="modal-body overflow-y generic-pdf"></div>
-//                <div class="modal-footer" style="justify-content: center; background: #092642;">
-//                    <button type="button" class="btn btn-light text-dark btn-closse"
-//                        data-dismiss="modal">Cerrar</button>
-//                </div>
-//            </div>
-//        </div>
-//    </div>

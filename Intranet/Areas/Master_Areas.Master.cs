@@ -55,7 +55,7 @@ namespace Intranet.Areas
 							liSub.ForEach(li =>
 							{
 								if (li.N_ID_TIPO_ELEMENTO_SUBMENU == (int)EnumTipoElemento.MODAL)
-									sb.AppendFormat(Res_Paint_HTML.PAINT_SUBMENU_PRINCIPAL_MODAL, li.T_URL_SUBMENU, li.T_VALOR_SUBMENU);
+									sb.AppendFormat(Res_Paint_HTML.PAINT_SUBMENU_PRINCIPAL_MODAL, li.N_ID_SUBMENU_PRINCIPAL, li.T_VALOR_SUBMENU);
 								else if (li.N_ID_TIPO_ELEMENTO_SUBMENU == (int)EnumTipoElemento.REDIRECT)
 									sb.AppendFormat(Res_Paint_HTML.PAINT_SUBMENU_PRINCIPAL_REDIRECT, li.T_URL_SUBMENU, li.T_VALOR_SUBMENU);
 							}

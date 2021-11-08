@@ -51,6 +51,7 @@
     <Compile Include="Data\Entity\BDI_C_GR_MENU_AREAS.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_MENU_PRINCIPAL.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_FRECUENTES.cs" />
+    <Compile Include="Data\Entity\BDI_C_GR_MODALES.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_SABER.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_SUBMENU_PRINCIPAL.cs" />
     <Compile Include="Data\Entity\BDI_C_GR_BANNER.cs" />
