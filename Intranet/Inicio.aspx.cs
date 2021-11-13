@@ -66,7 +66,7 @@ namespace Intranet
 					this.pageCarousel.InnerHtml = String.Concat(sb.ToString(), strHTML.ToString());
 				}
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}
@@ -116,7 +116,7 @@ namespace Intranet
 					this.bannerCarousel.InnerHtml = String.Concat(sb.ToString(), strHTML.ToString());
 				}
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}
@@ -169,7 +169,7 @@ namespace Intranet
 					this.frecuentesContainer.InnerHtml = String.Concat(sb.ToString(), strHTML.ToString());
 				}
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}
@@ -207,7 +207,7 @@ namespace Intranet
 					this.AplicativosContainer.InnerHtml = String.Concat(sb.ToString(), strHTML.ToString());
 				}
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}
@@ -272,7 +272,7 @@ namespace Intranet
 					this.destacadosContainer.InnerHtml = String.Concat(sb.ToString(), strHTML.ToString());
 				}
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}
@@ -325,7 +325,7 @@ namespace Intranet
 					this.saberContainer.InnerHtml = String.Concat(sb.ToString(), strHTML.ToString());
 				}
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}
@@ -356,7 +356,7 @@ namespace Intranet
 					this.yearsContainer.InnerHtml = String.Concat(sb.ToString(), strHTML.ToString());
 				}
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}
@@ -411,7 +411,7 @@ namespace Intranet
 				}
 				this.ulMenu.InnerHtml = strHTML.ToString();
 			}
-			catch (Exception _ex)
+			catch
 			{
 				throw;
 			}

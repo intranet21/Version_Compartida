@@ -1586,3 +1586,18 @@ li.li-birthday {
     color: #fff;
     border-color: #18a67d;
 }
+
+/* Modals */
+.modal-generic {
+    max-height: 410px
+}
+
+@media (min-width: 1289px) {
+    .modal-generic {
+        max-height: 750px
+    }
+
+        .modal-generic > object {
+            height: 750px;
+        }
+}

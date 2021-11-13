@@ -5,8 +5,12 @@ $(document).ready(function () {
         var title = this.getAttribute('data-title'), type = this.getAttribute('data-type'), url = this.getAttribute('data-url'), obj = '',
             content = document.getElementById('ContentGeneric'), _idMenuArea = this.getAttribute('data-idmenu');
 
-        $('.tab-content').each(function () {
-            if (this.id !== 'ContentGeneric')
+        $('.initContent').each(function () {
+            if (title === "Funciones")
+                $("#" + content.id).addClass('d-none');
+            else if (title !== "Funciones" && this.id === content.id)
+                $(this).removeClass('d-none');
+            else
                 $(this).addClass('d-none');
         });
 
@@ -37,10 +41,6 @@ $(document).ready(function () {
         }
         content.innerHTML = obj;
     });
-});
-
-$('.function').on("click", function () {
-    console.log(this.id);
 });
 
 function paintContent(data, title) {
@@ -83,7 +83,7 @@ function paintContent(data, title) {
     </div>`;
 }
 
-function subMenu(list, item) {
+function subMenu(list, item, father) {
     var child = "", listsbItem = list.filter(y => y.N_FK_PADRE === item.N_ID_CONTENT), idCont = item.N_ID_CONTENT;
     if (item.N_FK_TIPO_ELEMENTO == 0) {
         child += `<div class="accordion" id="accordionChild_${item.N_ID_CONTENT}">`;
@@ -135,7 +135,7 @@ function paintForTypeElement(item) {
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen=""></iframe>`;
         case 10:
-            return `<object data="${item.T_URL_MENU}" width="100px" height="85px"></object>`;
+            return `<object data="${item.T_URL_MENU}" width="100px" height="850px"></object>`;
         //Texto o HTML
         case 15:
             let content = item.T_DSC_CONTENT;

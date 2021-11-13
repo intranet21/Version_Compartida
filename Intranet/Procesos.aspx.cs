@@ -21,26 +21,6 @@ namespace Intranet
         }
 
         [WebMethod(EnableSession = true)]
-        public static String Hello()
-        {
-            GC.Collect();
-            try
-            {
-                msj.Mensaje = "Holaaaa ";
-                msj.status = 200;
-                GC.GetTotalMemory(true);
-                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
-            }
-            catch (Exception ex)
-            {
-                msj.Mensaje = "Error: " + ex.Message;
-                msj.status = 500;
-                GC.GetTotalMemory(true);
-                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
-            }
-        }
-
-        [WebMethod(EnableSession = true)]
         public static String GetListGallery(String _year)
         {
             GC.Collect();

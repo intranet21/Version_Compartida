@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MENU_PLECA_GENERIC" xml:space="preserve">
-    <value>pleca_{0}.png</value>
+    <value>barra-{0}.png</value>
   </data>
 </root>
