@@ -14,9 +14,11 @@ namespace Control.Data.Entity
 		public int N_FK_AREAS { get; set; }
 		public int N_FK_FRECUENTES { get; set; }
 		public int N_FK_PADRE { get; set; }
+		public int N_FK_DESTACADOS { get; set; }
 		public int N_FK_TIPO_ELEMENTO { get; set; }
 		public String T_URL_MODAL { get; set; }
 		public String T_LINK_SITE_EXTRA { get; set; }
 		public bool B_FLAG_MODAL { get; set; }
-	}
+        public String T_ICONO_MODAL { get; set; }
+    }
 }

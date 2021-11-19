@@ -61,7 +61,7 @@ namespace Control.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a barra-{0}.png.
+        ///   Busca una cadena traducida similar a pleca_{0}.png.
         /// </summary>
         public static string MENU_PLECA_GENERIC {
             get {

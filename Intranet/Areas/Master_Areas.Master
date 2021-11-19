@@ -38,7 +38,7 @@
         <div class="main mt-5"">                 
             <%-- Place para mostrar el menú --%>             
             <section class="menu">
-                <img id="imgGeneric" runat="server" src="http://intranet/Recursos/Imagenes/Areas/" />
+                <img id="imgGeneric" runat="server" src="http://intranet/Recursos/Imagenes/Areas/" class="mt-4"  style="width: 80%!important"/>
                 <div class="d-flex align-items-center" style="width: 90%;">
                     <input type="text" class="form-control ">
                     <div class="input-group-prepend">

@@ -19,7 +19,7 @@ namespace Control.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Res_Paint_HTML {
@@ -278,13 +278,12 @@ namespace Control.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;div class=&quot;col-md-3 d-flex box-frecuentes p-3 justify-content-between align-items-center&quot; data-toggle=&quot;modal&quot; data-target=&quot;#{0}&quot;&gt;
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;col-md-3 d-flex box-frecuentes p-3 justify-content-between align-items-center&quot; data-toggle=&quot;modal-generic&quot; data-id=&quot;{0}&quot; data-origin=&quot;N_FK_FRECUENTES&quot;&gt;
         ///                            &lt;img src=&quot;{1}&quot; alt=&quot;&quot; class=&quot;w-25 m-4&quot;&gt;
         ///                            &lt;div class=&quot;vertical-bar&quot;&gt;&lt;/div&gt;
         ///                            &lt;div class=&quot;w-100 d-flex  align-items-center justify-content-center&quot;&gt;
         ///                                &lt;div class=&quot;text-center&quot; style=&quot;font-size: 16px;&quot;&gt;{2}&lt;/div&gt;
-        ///                            &lt;/div&gt;
-        ///                      [resto de la cadena truncado]&quot;;.
+        ///                         [resto de la cadena truncado]&quot;;.
         /// </summary>
         public static string PAINT_FRECUENTES_MODAL {
             get {

@@ -46,7 +46,7 @@ $(document).ready(function () {
 function paintContent(data, title) {
     let content = "", child = "", distinct = data.filter(u => u.N_FK_PADRE === 0);
     distinct.forEach((item, index) => {
-        if (item.N_FK_TIPO_ELEMENTO === 1 && item.N_FK_TIPO_ELEMENTO === 12)
+        if (item.N_FK_TIPO_ELEMENTO === 1 || item.N_FK_TIPO_ELEMENTO === 12)
             content += paintForTypeElement(item);
         else {
             child = subMenu(data, item);

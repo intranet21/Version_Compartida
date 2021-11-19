@@ -149,7 +149,7 @@ namespace Intranet
 						{
 
 							case ((int)EnumTipoElemento.MODAL):
-								strHTML.AppendFormat(Res_Paint_HTML.PAINT_FRECUENTES_MODAL, item.T_URL_FRECUENTES, item.RUTA_IMAGEN, item.T_VALOR_FRECUENTES);
+								strHTML.AppendFormat(Res_Paint_HTML.PAINT_FRECUENTES_MODAL, item.N_ID_FRECUENTES, item.RUTA_IMAGEN, item.T_VALOR_FRECUENTES);
 								break;
 							case ((int)EnumTipoElemento.REDIRECT):
 								strHTML.AppendFormat(Res_Paint_HTML.PAINT_FRECUENTES_REDIRECT, item.RUTA_IMAGEN, item.T_URL_FRECUENTES, item.T_VALOR_FRECUENTES);
@@ -240,20 +240,8 @@ namespace Intranet
 						{
 
 							case ((int)EnumTipoElemento.MODAL):
-								switch (item.T_DSC_DESTACADOS)
-								{
-									case ("target"):
-										strHTML.AppendFormat(Res_Paint_HTML.PAINT_DESTACADOS_MODAL, item.RUTA_IMAGEN, item.T_VALOR_DESTACADOS, item.T_ID_MODAL_DESTACADOS);
-										break;
-									case ("img"):
-										strHTML.AppendFormat(Res_Paint_HTML.PAINT_DESTACADOS_MODAL_GENERIC, item.RUTA_IMAGEN, item.T_VALOR_DESTACADOS, item.T_ID_MODAL_DESTACADOS);
-										break;
-									case ("pdf"):
-										strHTML.AppendFormat(Res_Paint_HTML.PAINT_DESTACADOS_MODAL_GENERIC, item.RUTA_IMAGEN, item.T_VALOR_DESTACADOS, item.T_ID_MODAL_DESTACADOS);
-										break;
-								}
-
-								break;
+                                strHTML.AppendFormat(Res_Paint_HTML.PAINT_DESTACADOS_MODAL_GENERIC, item.RUTA_IMAGEN, item.T_VALOR_DESTACADOS, item.N_ID_DESTACADOS);
+                                break;
 							case ((int)EnumTipoElemento.REDIRECT):
 								strHTML.AppendFormat(Res_Paint_HTML.PAINT_DESTACADOS_REDIRECT, item.RUTA_IMAGEN, item.T_VALOR_DESTACADOS, item.T_URL_DESTACADOS);
 								break;
@@ -389,8 +377,8 @@ namespace Intranet
 							liSub.ForEach(li =>
 							{
 								if (li.N_ID_TIPO_ELEMENTO_SUBMENU == (int)EnumTipoElemento.MODAL)
-									sb.AppendFormat(Res_Paint_HTML.PAINT_SUBMENU_PRINCIPAL_MODAL, li.T_URL_SUBMENU, li.T_VALOR_SUBMENU);
-								else if (li.N_ID_TIPO_ELEMENTO_SUBMENU == (int)EnumTipoElemento.REDIRECT)
+                                    sb.AppendFormat(Res_Paint_HTML.PAINT_SUBMENU_PRINCIPAL_MODAL, li.N_ID_SUBMENU_PRINCIPAL, li.T_VALOR_SUBMENU);
+                                else if (li.N_ID_TIPO_ELEMENTO_SUBMENU == (int)EnumTipoElemento.REDIRECT)
 									if (li.N_ID_MENU == 3)
 									{
 										sb.AppendFormat(Res_Paint_HTML.PAINT_SUBMENU_PRINCIPAL_REDIRECT, "Areas/" + li.T_URL_SUBMENU, li.T_VALOR_SUBMENU);
