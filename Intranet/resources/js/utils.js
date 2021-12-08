@@ -1,17 +1,17 @@
-const height = window.screen.width <= 1280 || window.innerWidth <= 1280 ? '390px' : '750px';
+Ôªøconst height = window.screen.width <= 1280 || window.innerWidth <= 1280 ? '390px' : '750px';
 var isViewMedical = false;
 $(document).ready(function () {
     $('[data-toggle="modal-generic"]').on("click", async function () {
         const _id = this.getAttribute('data-id'), divTitle = document.createElement("div"), divContent = document.createElement("div"),
             divFooter = document.createElement("div"), _fk = this.getAttribute('data-origin');
-        //Se realiza la peticiÛn para obtener la informaciÛn
+        //Se realiza la petici√≥n para obtener la informaci√≥n
         let data = JSON.parse(await postExecutionAPI('GetInfoModal', { _subQuery: _fk + "|" + _id }));
-        //Se aÒade elementos de estilos y clases al div de los modales
+        //Se a√±ade elementos de estilos y clases al div de los modales
         divTitle.className = "modal-header text-white";
         divTitle.style.backgroundColor = "#092642";
         //Contenido
         divContent.className = "modal-body overflow-y modal-generic";
-        //Valida si se abrio la modal de servicio mÈdico
+        //Valida si se abrio la modal de servicio m√©dico
         if (isViewMedical) {
             let element = $element = document.getElementById("genericBody").parentNode;
             element.classList.replace("modal-xl", "modal-lg");
@@ -25,7 +25,7 @@ $(document).ready(function () {
                 divContent.innerHTML = buildHtml(obj);
             else
                 divContent.appendChild(buildHtml(obj));
-            if (obj.T_VALOR_MODAL === "Servicio mÈdico") {
+            if (obj.T_VALOR_MODAL === "Servicio m√©dico") {
                 let element = $element = document.getElementById("genericBody").parentNode;
                 element.classList.replace("modal-lg", "modal-xl");
                 isViewMedical = true;
@@ -33,7 +33,7 @@ $(document).ready(function () {
             divFooter.innerHTML = `<button type="button" class="btn btn-light text-dark btn-closse"
                         data-dismiss="modal">Cerrar</button>`;
         } else if (data.length > 1) {
-        //Si trae m·s de un elemento signifca que es contenido html en grid o collapsible
+        //Si trae m√°s de un elemento signifca que es contenido html en grid o collapsible
             var first = data.filter(u => u.N_FK_PADRE === 0);
             first.forEach((item) => {
                 divTitle.innerHTML = `<h5 class="modal-title text-center w-100">${item.T_VALOR_MODAL}</h5>`;
@@ -61,7 +61,7 @@ $(document).ready(function () {
         divFooter.style.background = "#092642";
         //Se limpia el contenedor 
         $('#genericBody').html("");
-        //Se aÒade el nuevo contenido
+        //Se a√±ade el nuevo contenido
         $('#genericBody').append(divTitle, divContent, divFooter);
         $('#generic-modal').modal();
     });
@@ -115,7 +115,7 @@ function paintSubContent(list, item, idParent) {
     return child;
 }
 
-//AquÌ se construyen los botones acorde a su tipo y funcionalidad
+//Aqu√≠ se construyen los botones acorde a su tipo y funcionalidad
 function buildButtonsModals(item, idParent, display) {
     switch (item.N_FK_TIPO_ELEMENTO) {
         case 1:
@@ -131,7 +131,7 @@ function buildButtonsModals(item, idParent, display) {
                             <i class="fa fa-download"></i></a>`;
         case 100:
             return `<button id="btnBackGeneric" type="button" class="btn btn-danger btn-lg backGeneric" data-father="${idParent}" data-content="viewerGeneric"
-                        style="display: none; color: #fff;font-size: 1em; width: 100px;"  onclick="showElementsInModals(false, this,'${display}'); return false;">Atr·s </button>
+                        style="display: none; color: #fff;font-size: 1em; width: 100px;"  onclick="showElementsInModals(false, this,'${display}'); return false;">Atr√°s </button>
                     &nbsp;&nbsp; <button type="button" class="btn btn-light text-dark btn-closse"
                         data-dismiss="modal">Cerrar</button>`;
         case 105:
@@ -171,7 +171,7 @@ function ifLinkExtra(link) {
     }
 }
 
-//MÈtodos generico
+//M√©todos generico
 function showElementsInModals(open, element, display) {
     let back = $(element).attr("data-back"), father = $(element).attr("data-father"), show = $(element).attr("data-content"),
         doc = $(element).attr("data-document"), type = $(element).attr("data-type"), object;
@@ -202,7 +202,7 @@ function showElementsInModals(open, element, display) {
 }
 
 async function postExecutionAPI(method, obj) {
-    //Se declara la peticiÛn utilizando la herramienta fetch de javascript
+    //Se declara la petici√≥n utilizando la herramienta fetch de javascript
     let _resp = await fetch('../Procesos.aspx/' + method, {
         method: 'POST',
         body: JSON.stringify(obj),

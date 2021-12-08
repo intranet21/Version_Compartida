@@ -78,9 +78,6 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Plantillas\Birthday.html" />
     <Content Include="Procesos.aspx" />
-    <Content Include="Querys\Query_Modales.sql" />
-    <Content Include="Querys\SQL_Query_Create_Tables_and_Data.sql" />
-    <Content Include="Querys\SQL_Query_Foreign_Keys.sql" />
     <Content Include="resources\css\areas.css" />
     <Content Include="resources\css\modalst.css" />
     <Content Include="resources\css\nunforest_style.css" />
