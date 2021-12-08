@@ -21,7 +21,8 @@ namespace Control.Data.Enum
         CONTENT = 11,
         FUNCTION_AREAS = 12,
         VIDEO = 13,
-        GRID = 14,
+        GRID_MODAL = 14,
         HTML = 15,
+        COLLAPSIBLE_MODAL = 16,
     }
 }
