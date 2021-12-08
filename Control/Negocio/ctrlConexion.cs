@@ -102,7 +102,7 @@ namespace Control.Negocio
                 sdt = new DataTable();
                 sda.Fill(sdt);
             }
-            catch
+            catch 
             {
                 sdt = null;
             }

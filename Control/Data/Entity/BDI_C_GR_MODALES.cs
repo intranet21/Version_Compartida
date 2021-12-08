@@ -20,5 +20,5 @@ namespace Control.Data.Entity
 		public String T_LINK_SITE_EXTRA { get; set; }
 		public bool B_FLAG_MODAL { get; set; }
         public String T_ICONO_MODAL { get; set; }
-	}
+    }
 }
