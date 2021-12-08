@@ -78,6 +78,9 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Plantillas\Birthday.html" />
     <Content Include="Procesos.aspx" />
+    <Content Include="Querys\SQL_Query_Foreign_Keys.sql" />
+    <Content Include="Querys\Query_Modales.sql" />
+    <Content Include="Querys\SQL_Query_Create_Tables_and_Data.sql" />
     <Content Include="resources\css\areas.css" />
     <Content Include="resources\css\modalst.css" />
     <Content Include="resources\css\nunforest_style.css" />
@@ -181,10 +184,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resources\js\utils.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Areas\Master_Areas.Master" />
+    <Content Include="resources\examples.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,9 +197,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="resources\areas\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Control\Control.csproj">
       <Project>{540ed959-b8ab-490d-b5b2-63ad1e99e46f}</Project>

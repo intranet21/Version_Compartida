@@ -884,3 +884,19 @@ footer .up-footer .footer-line a, footer .up-footer .footer-line a:hover {
         height: 640px;
     }
 }
+
+
+/* Modals */
+.modal-generic {
+    max-height: 410px
+}
+
+@media (min-width: 1289px) {
+    .modal-generic {
+        max-height: 750px
+    }
+
+        .modal-generic > object {
+            height: 750px;
+        }
+}

@@ -21,26 +21,6 @@ namespace Intranet
         }
 
         [WebMethod(EnableSession = true)]
-        public static String Hello()
-        {
-            GC.Collect();
-            try
-            {
-                msj.Mensaje = "Holaaaa ";
-                msj.status = 200;
-                GC.GetTotalMemory(true);
-                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
-            }
-            catch (Exception ex)
-            {
-                msj.Mensaje = "Error: " + ex.Message;
-                msj.status = 500;
-                GC.GetTotalMemory(true);
-                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
-            }
-        }
-
-        [WebMethod(EnableSession = true)]
         public static String GetListGallery(String _year)
         {
             GC.Collect();
@@ -72,7 +52,33 @@ namespace Intranet
             GC.Collect();
             try
             {
-                List< BDI_C_GR_CONTENIDO_AREAS> list = ctrl.ListGetContentAreas(Convert.ToInt32(_idMenuArea));
+                List<BDI_C_GR_CONTENIDO_AREAS> list = ctrl.ListGetContentAreas(Convert.ToInt32(_idMenuArea));
+                msj = new EntResponse { Mensaje = "", body = JsonConvert.SerializeObject(list), status = 200 };
+                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
+            }
+            catch (Exception ex)
+            {
+                msj = new EntResponse
+                {
+                    Mensaje = "Error: " + ex.Message,
+                    status = 500,
+                    body = ""
+                };
+                return JsonConvert.SerializeObject((object)msj, (Formatting)1);
+            }
+            finally
+            {
+                GC.GetTotalMemory(true);
+            }
+        }
+
+        [WebMethod(EnableSession = true)]
+        public static String GetInfoModal(String _subQuery)
+         {
+            GC.Collect();
+            try
+            {
+                List< BDI_C_GR_MODALES> list = ctrl.ListGetModal(_subQuery);
                 msj = new EntResponse { Mensaje = "", body = JsonConvert.SerializeObject(list), status = 200 };
                 return JsonConvert.SerializeObject((object)msj, (Formatting)1);
             }

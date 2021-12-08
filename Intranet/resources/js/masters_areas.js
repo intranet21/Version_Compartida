@@ -5,14 +5,18 @@ $(document).ready(function () {
         var title = this.getAttribute('data-title'), type = this.getAttribute('data-type'), url = this.getAttribute('data-url'), obj = '',
             content = document.getElementById('ContentGeneric'), _idMenuArea = this.getAttribute('data-idmenu');
 
-        $('.tab-content').each(function () {
-            if (this.id !== 'ContentGeneric')
+        $('.initContent').each(function () {
+            if (title === "Funciones")
+                $("#" + content.id).addClass('d-none');
+            else if (title !== "Funciones" && this.id === content.id)
+                $(this).removeClass('d-none');
+            else
                 $(this).addClass('d-none');
         });
 
         switch (type) {
             case 'CONTENT':
-                let data = JSON.parse(await postExecutionAPI('GetListContentArea', { _idMenuArea }));
+                let data = JSON.parse(await postExecutionAPI('GetListContentArea',{ _idMenuArea }));
                 obj = paintContent(data, title);
                 break;
             case 'FUNCTION_AREAS':
@@ -39,26 +43,10 @@ $(document).ready(function () {
     });
 });
 
-$('.function').on("click", function () {
-    console.log(this.id);
-});
-
-async function postExecutionAPI(method, obj) {
-    //Se declara la petición utilizando la herramienta fetch de javascript
-    let _resp = await fetch('../Procesos.aspx/' + method, {
-        method: 'POST',
-        body: JSON.stringify(obj),
-        headers: { 'Content-Type': 'application/json' }
-    });
-    let data = await _resp.json();
-    const { status, body } = JSON.parse(data.d);
-    return (status === 200) ? body : null;
-}
-
 function paintContent(data, title) {
     let content = "", child = "", distinct = data.filter(u => u.N_FK_PADRE === 0);
     distinct.forEach((item, index) => {
-        if (item.N_FK_TIPO_ELEMENTO === 1 && item.N_FK_TIPO_ELEMENTO === 12)
+        if (item.N_FK_TIPO_ELEMENTO === 1 || item.N_FK_TIPO_ELEMENTO === 12)
             content += paintForTypeElement(item);
         else {
             child = subMenu(data, item);
@@ -95,7 +83,7 @@ function paintContent(data, title) {
     </div>`;
 }
 
-function subMenu(list, item) {
+function subMenu(list, item, father) {
     var child = "", listsbItem = list.filter(y => y.N_FK_PADRE === item.N_ID_CONTENT), idCont = item.N_ID_CONTENT;
     if (item.N_FK_TIPO_ELEMENTO == 0) {
         child += `<div class="accordion" id="accordionChild_${item.N_ID_CONTENT}">`;
@@ -147,7 +135,7 @@ function paintForTypeElement(item) {
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen=""></iframe>`;
         case 10:
-            return `<object data="${item.T_URL_MENU}" width="100px" height="85px"></object>`;
+            return `<object data="${item.T_URL_MENU}" width="100px" height="850px"></object>`;
         //Texto o HTML
         case 15:
             let content = item.T_DSC_CONTENT;
@@ -159,19 +147,3 @@ function paintForTypeElement(item) {
             return content;
     }
 }
-
-//< !--Modal Generic-- >
-//    <div class="modal fade" id="generic-modal" tabindex="-1" role="dialog" aria-hidden="true">
-//        <div class="modal-dialog modal-lg" role="document">
-//            <div class="modal-content">
-//                <div class="modal-header text-white" style="background: #092642;">
-//                    <h5 class="modal-title text-center w-100" id="genericTitle"></h5>
-//                </div>
-//                <div id="genericObj" class="modal-body overflow-y generic-pdf"></div>
-//                <div class="modal-footer" style="justify-content: center; background: #092642;">
-//                    <button type="button" class="btn btn-light text-dark btn-closse"
-//                        data-dismiss="modal">Cerrar</button>
-//                </div>
-//            </div>
-//        </div>
-//    </div>

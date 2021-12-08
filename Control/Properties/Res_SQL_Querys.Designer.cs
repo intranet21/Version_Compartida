@@ -19,7 +19,7 @@ namespace Control.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Res_SQL_Querys {
@@ -85,11 +85,18 @@ namespace Control.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a SELECT  BDI_C_GR_DESTACADOS.N_ID_DESTACADOS,BDI_C_GR_DESTACADOS.T_VALOR_DESTACADOS, BDI_C_GR_DESTACADOS.N_ORDEN_DESTACADOS, BDI_C_GR_CAT_IMAGENES.T_PATH_IMG AS RUTA_IMAGEN,
-        ///		BDI_C_GR_DESTACADOS.B_FLAG_DESTACADOS, BDI_C_GR_TIPO_ELEMENTOS.N_ID_TIPO_ELEMENTO , BDI_C_GR_DESTACADOS.T_URL_DESTACADOS, BDI_C_GR_DESTACADOS.T_ID_MODAL_DESTACADOS, BDI_C_GR_DESTACADOS.T_DSC_DESTACADOS
-        ///from BDI_C_GR_DESTACADOS
-        ///     INNER JOIN BDI_C_GR_CAT_IMAGENES	 
-        ///ON BDI_C_GR_DESTACADOS.N_ID_IMG_DESTACADOS = BDI_C_GR_CAT_IMAGENES [resto de la cadena truncado]&quot;;.
+        ///   Busca una cadena traducida similar a SELECT  
+        ///DEST.N_ID_DESTACADOS,
+        ///DEST.T_VALOR_DESTACADOS, 
+        ///DEST.N_ORDEN_DESTACADOS, 
+        ///IMG.T_PATH_IMG AS RUTA_IMAGEN,
+        ///DEST.B_FLAG_DESTACADOS, 
+        ///TYP.N_ID_TIPO_ELEMENTO , 
+        ///DEST.T_DSC_DESTACADOS
+        ///FROM BDI_C_GR_DESTACADOS DEST
+        ///INNER JOIN BDI_C_GR_CAT_IMAGENES IMG  ON DEST.N_ID_IMG_DESTACADOS = IMG.N_ID_IMG 
+        ///INNER JOIN BDI_C_GR_TIPO_ELEMENTOS  TYP ON DEST.N_ID_TIPO_ELEMENTO_DESTACADOS = TYP.N_ID_TIPO_ELEMENTO
+        ///WHERE DEST.B_FLAG_DESTACADOS = 1 ORDER BY DEST.N_ORDEN_DESTACADOS;.
         /// </summary>
         public static string SQL_Query_Get_Destacados {
             get {
@@ -166,6 +173,15 @@ namespace Control.Properties {
         public static string SQL_Query_Get_Menu_Principal {
             get {
                 return ResourceManager.GetString("SQL_Query_Get_Menu_Principal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SELECT * FROM [BD_SQL_INTRANET_DESA].[dbo].[BDI_C_GR_MODALES] WHERE {0} AND B_FLAG_MODAL = 1;.
+        /// </summary>
+        public static string SQL_Query_Get_Modals {
+            get {
+                return ResourceManager.GetString("SQL_Query_Get_Modals", resourceCulture);
             }
         }
         

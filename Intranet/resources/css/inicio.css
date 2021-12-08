@@ -611,10 +611,6 @@ img{
     color:#8A124F;
 }
 
-.hoverBox:hover{
-    background:#ccc;
-}
-
 .nva:hover{    
     background:#343A40!important;
     color: #fff;
@@ -623,6 +619,7 @@ img{
 .nva.active{
     background:#343A40!important;
 }
+
 /* Pop Ups */
 /* ============================================== */
 /*Radiografia CONSAR*/
@@ -1439,10 +1436,6 @@ li.li-birthday {
     font-weight: 400;
 }
 
-.card-header{
-    height:70px;
-    text-align:center;
-}
 /* ============================================== */
 /* Pop's Voz CONSAR*/
 /* ============================================== */
@@ -1585,4 +1578,45 @@ li.li-birthday {
     background-color: #18a67d!important;
     color: #fff;
     border-color: #18a67d;
+}
+
+.generic-pdf {
+    padding: 0 !important;
+    max-height: 415px;
+}
+
+.generic-object {
+    width: 100%;
+    height: 410px;
+}
+
+@media screen and (min-width: 1281px) {
+    .generic-pdf {
+        padding: 0 !important;
+        max-height: 650px;
+    }
+
+    .generic-object {
+        height: 640px;
+    }
+}
+
+.hoverBox:hover {
+    background: #e6e6e6 !important;
+}
+
+
+/* Modals */
+.modal-generic {
+    max-height: 410px
+}
+
+@media (min-width: 1289px) {
+    .modal-generic {
+        max-height: 750px
+    }
+
+        .modal-generic > object {
+            height: 750px;
+        }
 }

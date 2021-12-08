@@ -38,7 +38,7 @@
         <div class="main mt-5"">                 
             <%-- Place para mostrar el menú --%>             
             <section class="menu">
-                <img id="imgGeneric" runat="server" src="http://intranet/Recursos/Imagenes/" />
+                <img id="imgGeneric" runat="server" src="http://intranet/Recursos/Imagenes/Areas/" class="mt-4"  style="width: 80%!important"/>
                 <div class="d-flex align-items-center" style="width: 90%;">
                     <input type="text" class="form-control ">
                     <div class="input-group-prepend">
@@ -61,11 +61,20 @@
                 </footer>
             </section>              
         </div>
+        <!-- Modal Generic -->
+        <div class="modal fade" id="generic-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div id="genericBody" class="modal-content">
+                    
+                </div>
+            </div>
+        </div>
     </form>
     <%----JS 2020------%>
     <script src="../resources/js/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="../resources/js/popper.min.js" type="text/javascript"></script>
     <script src="../resources/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../resources/js/utils.js" type="text/javascript"></script>
     <script src="../resources/js/masters_areas.js" type="text/javascript"></script>
 </body>
 </html>
