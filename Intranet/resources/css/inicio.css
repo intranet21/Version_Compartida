@@ -96,9 +96,9 @@ img{
 }
 
 /* Frecuentes */
-.frecuentes{
-    margin-top:2rem;
-    background-image: url(http://intranet/Recursos/Imagenes/2018.jpg);
+.frecuentes {
+    margin-top: 2rem;
+    background-image: url(http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/2018.jpg);
     background-attachment: scroll;
     background-size: cover;
     background-repeat: no-repeat;
@@ -157,9 +157,9 @@ img{
 }
 
 /* Panel Destacados */
-.destacados{
-    margin-top:2rem;
-    background-image: url(http://intranet/Recursos/Imagenes/2018.jpg);
+.destacados {
+    margin-top: 2rem;
+    background-image: url(http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/2018.jpg);
     background-attachment: scroll;
     background-size: cover;
     background-repeat: no-repeat;
@@ -271,9 +271,9 @@ img{
 }
 
 /* Agenda del Mes */
-.agenda{
-    margin-top:2rem;
-    background-image: url(http://intranet/Recursos/Imagenes/20189.jpg);
+.agenda {
+    margin-top: 2rem;
+    background-image: url(http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/20189.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -391,9 +391,9 @@ img{
 }
 
 /* Memoria Fotográfica */
-.fotografica{
-    margin-top:2rem;
-    background-image: url(http://intranet/Recursos/Imagenes/20189.jpg);
+.fotografica {
+    margin-top: 2rem;
+    background-image: url(http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/20189.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -430,9 +430,9 @@ img{
     color: #fff;
 }
 /* Lo que hay que saber */
-.saber{
-    margin-top:2rem;
-    background-image: url(http://intranet/Recursos/Imagenes/20189.jpg);
+.saber {
+    margin-top: 2rem;
+    background-image: url(http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/20189.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -821,9 +821,10 @@ img{
     width: 25px;
 }
 
-.acco-item-child{
+.acco-item-child {
     float: right;
-    width: 93%!important;
+    width: 93% !important;
+    margin-top: 0rem !important;
 }
 .artConvenio{
     cursor: pointer;

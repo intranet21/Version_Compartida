@@ -293,7 +293,7 @@ namespace Intranet
 						{
 
 							case ((int)EnumTipoElemento.MODAL):
-								strHTML.AppendFormat(Res_Paint_HTML.PAINT_SABER_MODAL, item.T_URL_SABER, item.T_ICONO_SABER, item.T_TITULO_SABER, item.T_DSC_SABER);
+								strHTML.AppendFormat(Res_Paint_HTML.PAINT_SABER_MODAL_GENERIC, item.N_ID_SABER, item.T_ICONO_SABER, item.T_TITULO_SABER, item.T_DSC_SABER);
 								break;
 							case ((int)EnumTipoElemento.REDIRECT):
 								strHTML.AppendFormat(Res_Paint_HTML.PAINT_SABER_REDIRECT, item.T_URL_SABER, item.T_ICONO_SABER, item.T_TITULO_SABER, item.T_DSC_SABER);

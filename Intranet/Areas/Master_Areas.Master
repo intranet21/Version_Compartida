@@ -24,7 +24,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark double-nav bg-dark">
                 <a class="navbar-brand" href="../Inicio.aspx">
-                    <img src="http://intranet/Recursos/Imagenes/iconos/logo_consarT.png" style="width: 60px!important;" alt="logo" />
+                    <img src="http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/iconos/logo_consarT.png" style="width: 60px!important;" alt="logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"
                     aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
         <div class="main mt-5"">                 
             <%-- Place para mostrar el menú --%>             
             <section class="menu">
-                <img id="imgGeneric" runat="server" src="http://intranet/Recursos/Imagenes/Areas/" class="mt-4"  style="width: 80%!important"/>
+                <img id="imgGeneric" runat="server" src="http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/areas/" class="mt-4"  style="width: 80%!important"/>
                 <div class="d-flex align-items-center" style="width: 90%;">
                     <input type="text" class="form-control ">
                     <div class="input-group-prepend">

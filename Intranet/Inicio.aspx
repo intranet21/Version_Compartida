@@ -24,7 +24,7 @@
         <header id="home">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="Default.aspx">
-                    <img src="http://intranet/Recursos/Imagenes/iconos/logo_consarT.png" style="width: 60px!important;" alt="logo"/>
+                    <img src="http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/iconos/logo_consarT.png" style="width: 60px!important;" alt="logo"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"
                     aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,11 +106,11 @@
                     <div class="col-2  d-flex flex-column justify-content-center">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link nva active my-3 d-flex justify-content-center" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                                <img src="../resources/img/eventos.png" style=" width: 30px; margin-right: 1em;">
+                                <img src="http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/iconos/eventos.png" style=" width: 30px; margin-right: 1em;">
                                 <span>Memoria Fotográfica</span>
                                 </a>
                             <a class="nav-link nva my-3" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                                <img src="../resources/img/campa.png" style=" width: 30px; margin-right: 1em;">
+                                <img src="http://www.intranet_consar.gob.mx/Recursos_Intranet/Imagenes/iconos/campa.png" style=" width: 30px; margin-right: 1em;">
                                 <span>Videos</span></a>
                         </div>
                     </div>

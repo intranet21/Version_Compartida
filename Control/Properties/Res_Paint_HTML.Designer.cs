@@ -19,7 +19,7 @@ namespace Control.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Res_Paint_HTML {
@@ -395,6 +395,23 @@ namespace Control.Properties {
         public static string PAINT_SABER_MODAL {
             get {
                 return ResourceManager.GetString("PAINT_SABER_MODAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;col-md-3&quot;&gt;
+        ///                    &lt;div class=&quot;item&quot;&gt;
+        ///                        &lt;span class=&quot;icon&quot; aria-hidden=&quot;true&quot; data-toggle=&quot;modal-generic&quot; data-id=&quot;{0}&quot; data-origin=&quot;N_FK_SABER&quot;&gt;
+        ///                            &lt;i class=&quot;{1}&quot;&gt;&lt;/i&gt;
+        ///                        &lt;/span&gt;
+        ///                        &lt;h6&gt;{2}&lt;/h6&gt;
+        ///                        &lt;p&gt;{3}&lt;/p&gt;
+        ///                    &lt;/div&gt;
+        ///                &lt;/div&gt;.
+        /// </summary>
+        public static string PAINT_SABER_MODAL_GENERIC {
+            get {
+                return ResourceManager.GetString("PAINT_SABER_MODAL_GENERIC", resourceCulture);
             }
         }
         

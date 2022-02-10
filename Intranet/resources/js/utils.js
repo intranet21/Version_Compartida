@@ -33,7 +33,7 @@ $(document).ready(function () {
             divFooter.innerHTML = `<button type="button" class="btn btn-light text-dark btn-closse"
                         data-dismiss="modal">Cerrar</button>`;
         } else if (data.length > 1) {
-        //Si trae más de un elemento signifca que es contenido html en grid o collapsible
+        //Si trae más de un elemento signifca que es contenido html en grid o collapsible o en infografía
             var first = data.filter(u => u.N_FK_PADRE === 0);
             first.forEach((item) => {
                 divTitle.innerHTML = `<h5 class="modal-title text-center w-100">${item.T_VALOR_MODAL}</h5>`;
@@ -50,7 +50,7 @@ $(document).ready(function () {
                     divFooter.innerHTML = buildButtonsModals({ N_FK_TIPO_ELEMENTO: 100 }, "acordion-modal-" + item.N_ID_MODAL, "block");
                 }
                 else if (item.N_FK_TIPO_ELEMENTO === 17) {
-                    divContent.innerHTML = `<div id="list-modal-${item.N_ID_MODAL}">${paintSubContent(data, item, "list-modal-" + item.N_ID_MODAL)} </div>`
+                    divContent.innerHTML = `<div id="list-modal-${item.N_ID_MODAL}">${paintSubContent(data, item, "list-modal-" + item.N_ID_MODAL)}${ifDescripcion(item.T_DSC_MODAL)} </div><div id="viewerGeneric" style="display: none;"></div>`
                     divFooter.innerHTML = buildButtonsModals({ N_FK_TIPO_ELEMENTO: 100 }, "list-modal-" + item.N_ID_MODAL, "block");
                 }
             });
@@ -83,19 +83,34 @@ function paintSubContent(list, item, idParent) {
 
     if (item.N_FK_TIPO_ELEMENTO === 17) {
         listSbItem.forEach((sbItem, index) => {
-            child += `<div class="d-flex w-100 my-2 p-1 border">
+
+
+            switch (sbItem.N_FK_TIPO_ELEMENTO) {
+                case 20:
+                    return child += `<div class="d-flex w-100 my-2 border">
+                             <a class="acco-item border bg-dark text-white" style="margin: 0px;width: 100%;">
+                            <span class="font-weight-light" style="padding-top: 0.9rem; padding-left: 0.5rem;"><i class="fa fa-list-alt"></i>${sbItem.T_VALOR_MODAL}</span>
+                            </a>
+                        </div>`;
+                
+                default:
+                    return child += `<div class="d-flex w-100 my-2 p-1 border ${sbItem.T_CLASS !== null ? `${sbItem.T_CLASS}` : ""}">
                             <img src="${sbItem.T_ICONO_MODAL}" class="card-img-top" style="width:30px; height:30px" alt="...">
                             <div class="font-weight-light w-90 pl-2 d-flex align-items-center">${sbItem.T_VALOR_MODAL}</div>
                              ${buildButtonsModals(sbItem, idParent)}
                         </div>`;
+            }
+            
         });
         return child;
     }
 
+    
+
     listSbItem.forEach((sbItem, index) => {
         if (sbItem.N_FK_TIPO_ELEMENTO === 0) {
             let searchChild = paintSubContent(list, sbItem, "acordion-modal-" + item.N_ID_MODAL);
-            let icon = sbItem.T_ICONO_MODAL != null ? `<img src='${sbItem.T_ICONO_MODAL}' alt='icono' style="width: 5%; margin-right: 1rem;"/>` : "";
+            let icon = sbItem.T_ICONO_MODAL != null ? `<img src='${sbItem.T_ICONO_MODAL}' alt='icono' style="width: 8%; margin-right: 1rem;"/>` : "";
             child += `<div class="card border mt-${index === 0 ? '3' : '1'}"><div class="card-header  bg-white ${icon != "" ? "d-flex": ""}" id="father-${sbItem.N_ID_MODAL}" type="button" data-toggle="collapse"
                                     data-target="#collapse-${sbItem.N_ID_MODAL}" aria-expanded="true" aria-controls="collapse-${sbItem.N_ID_MODAL}">
                                     ${icon} <p class="font-weight-bold mb-0 p-2 ">${sbItem.T_VALOR_MODAL}</p>
@@ -103,14 +118,21 @@ function paintSubContent(list, item, idParent) {
                                 <div id="collapse-${sbItem.N_ID_MODAL}" class="collapse" aria-labelledby="father-${sbItem.N_ID_MODAL}" data-parent="#acordion-modal-${item.N_ID_MODAL}">
                                     <div class="card-body">${searchChild} ${sbItem.T_DSC_MODAL !== null ? sbItem.T_DSC_MODAL : ""}</div>
                                 </div></div>`;
-            }
-            else if (sbItem.N_FK_TIPO_Elemento !== 0) {
-            child += `<div class="d-flex justify-content-center align-items-center w-100 my-2 p-1 border">
-                        <img src="${sbItem.T_ICONO_MODAL}" class="card-img-top" style="width:30px; height:30px" alt="...">
-                        <div class="font-weight-light w-90 pl-2">${sbItem.T_VALOR_MODAL} ${sbItem.T_DSC_MODAL !== null ? `<span class="text-muted">${sbItem.T_DSC_MODAL}</span>` : ""}</div>
-                        ${ buildButtonsModals(sbItem, idParent)}
-                </div>`;
-            }
+        }
+        else if (sbItem.N_FK_TIPO_ELEMENTO === 20) {
+            child += `<div class="d-flex justify-content-center align-items-center w-100 my-2 border">
+                        <a class="acco-item border bg-dark text-white" style="margin: 0px;width: 100%;">
+                            <span class="font-weight-light" style="padding-top: 0.9rem; padding-left: 0.5rem;"><i class="fa fa-list-alt"></i>${sbItem.T_VALOR_MODAL}</span>
+                        </a>                   
+            </div>`;
+        }
+        else if (sbItem.N_FK_TIPO_ELEMENTO !== 0) {
+            child += `<div class="d-flex justify-content-center align-items-center w-100 my-2 p-1 border ${sbItem.T_CLASS !== null ? `${sbItem.T_CLASS}` : ""}">
+                    <img src="${sbItem.T_ICONO_MODAL}" class="card-img-top" style="width:30px; height:30px" alt="...">
+                    <div class="font-weight-light w-90 pl-2">${sbItem.T_VALOR_MODAL} ${sbItem.T_DSC_MODAL !== null ? `<span class="text-muted">${sbItem.T_DSC_MODAL}</span>` : ""}</div>
+                    ${ buildButtonsModals(sbItem, idParent)}
+            </div>`;
+        }
     });
     return child;
 }
@@ -127,8 +149,14 @@ function buildButtonsModals(item, idParent, display) {
             return `<a class="btn btn-info py-1 text-white px-2  font-13 pressGeneric" data-father="${idParent}" data-content="viewerGeneric" data-back="btnBackGeneric" 
                             data-document="${item.T_URL_MODAL}" data-type="${item.N_FK_TIPO_ELEMENTO}" onclick="showElementsInModals(true, this); return false;"><i class="fa fa-search"></i></a>`;
         case 18:
-            return `<a class="btn btn-danger py-2 text-white px-2 font-13" href=${item.T_URL_MODAL}">
+            return `<a class="btn btn-danger py-2 text-white px-2 font-13" href="${item.T_URL_MODAL}">
                             <i class="fa fa-download"></i></a>`;
+
+        case 19:
+            return `<a class="btn btn-info  text-white px-3 mr-2 font-13 pressGeneric" data-father="${idParent}" data-content="viewerGeneric" data-back="btnBackGeneric" 
+                            data-document="${item.T_URL_MODAL}" data-type="${item.N_FK_TIPO_ELEMENTO}" onclick="showElementsInModals(true, this); return false;" style="height: fit-content;"><i class="fa fa-search"></i></a>
+                            <a class="btn btn-danger py-2 text-white px-3 mr-2 font-13" href="${item.T_LINK_SITE_EXTRA}" style="height: fit-content;"> <i class="fa fa-download"></i></a> `;
+
         case 100:
             return `<button id="btnBackGeneric" type="button" class="btn btn-danger btn-lg backGeneric" data-father="${idParent}" data-content="viewerGeneric"
                         style="display: none; color: #fff;font-size: 1em; width: 100px;"  onclick="showElementsInModals(false, this,'${display}'); return false;">Atrás </button>
@@ -155,7 +183,13 @@ function buildHtml(data) {
             pdf.type = "application/pdf";
             pdf.data = data.T_URL_MODAL;
             pdf.className = "generic-object";
-            return pdf; 
+            return pdf;
+        case 19:
+            pdf = document.createElement("object");
+            pdf.type = "application/pdf";
+            pdf.data = data.T_URL_MODAL;
+            pdf.className = "generic-object";
+            return pdf;
         case 15:
             return `<div class="text-center mt-3 py-3 px-5">${data.T_DSC_MODAL}</div>
                                 <div class="text-center my-3 text-uppercase">${ifLinkExtra(data.T_LINK_SITE_EXTRA)}</div>`;
@@ -169,13 +203,24 @@ function ifLinkExtra(link) {
         return ` <a href="${link}" class="btn btn-outline-info font-weight-bold" target="_blank"> Visitar sitio
                 &nbsp;&nbsp;<i class="fa fa-play faa-horizontal" style="color:#1f3a5a"></i></a>`
     }
+    
+}
+
+function ifDescripcion(Dsc) {
+    if (Dsc !== null) {
+        return `<div class="justify-content-center mt-2 rowPublic">${Dsc}</div>`
+    }
+    else {
+        return ""
+    }
 }
 
 //Métodos generico
 function showElementsInModals(open, element, display) {
     let back = $(element).attr("data-back"), father = $(element).attr("data-father"), show = $(element).attr("data-content"),
         doc = $(element).attr("data-document"), type = $(element).attr("data-type"), object;
-    let classNm = type === "10" ? 'generic-object'  :  ''; 
+    let classNm = type === "10" || type === "19" ? 'generic-object' : '';
+
     if (!open) {
         $("#" + father).css("display", display);
         $("#" + element.id).css("display", "none");

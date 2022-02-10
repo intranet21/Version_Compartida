@@ -86,6 +86,10 @@
     <Content Include="resources\css\bootstrap.min.css" />
     <Content Include="resources\css\inicio.css" />
     <Content Include="resources\css\lightbox.min.css" />
+    <Content Include="resources\images\close.png" />
+    <Content Include="resources\images\loading.gif" />
+    <Content Include="resources\images\next.png" />
+    <Content Include="resources\images\prev.png" />
     <Content Include="resources\js\bootstrap.min.js" />
     <Content Include="resources\js\Galeria.js" />
     <Content Include="resources\js\jquery-1.9.1.js" />
@@ -186,6 +190,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Areas\Master_Areas.Master" />
+    <Content Include="resources\images\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
