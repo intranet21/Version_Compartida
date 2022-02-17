@@ -1401,7 +1401,15 @@ li.li-birthday {
 .rowInfo{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 18% 1fr;
+    grid-template-columns: 23% 1fr;
+}
+
+#ulTabs > .card {
+    width: 145PX;
+}
+
+#ulTabs > .card > .card-header {
+    padding: 0px;
 }
 
 #ulTabs{    
@@ -1437,10 +1445,34 @@ li.li-birthday {
     font-weight: 400;
 }
 
+.artInfografia {
+    cursor: pointer;
+    padding: 1rem 1%;
+    border: 4px dotted #cacaca;
+    border-radius: 12px 0;
+}
+
+.artInfografia:hover {
+    color: #fff;
+    background: #694B6D;
+    border: 0;
+}
+
+.artInfografia img {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.artInfografia-title {
+    font-weight: 300;
+    height: 40px;
+    margin: 1.6% 0;
+    font-family: cursive;
+}
 /* ============================================== */
 /* Pop's Voz CONSAR*/
 /* ============================================== */
-.rowVoz{
+.rowVoz {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2, 1fr);

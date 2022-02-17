@@ -46,12 +46,15 @@ $(document).ready(function () {
                     divFooter.innerHTML = buildButtonsModals({ N_FK_TIPO_ELEMENTO: 105 });
                 }
                 else if (item.N_FK_TIPO_ELEMENTO === 16) {
-                    divContent.innerHTML = `<div  class="accordion" id="acordion-modal-${item.N_ID_MODAL}">${paintSubContent(data, item)}</div><div id="viewerGeneric" style="display: none;"></div>`;
+                    divContent.innerHTML = `<div  class="accordion" id="acordion-modal-${item.N_ID_MODAL}">${paintSubContent(data, item)}</div>  <div id="viewerGeneric" style="display: none;"></div>`;
                     divFooter.innerHTML = buildButtonsModals({ N_FK_TIPO_ELEMENTO: 100 }, "acordion-modal-" + item.N_ID_MODAL, "block");
                 }
                 else if (item.N_FK_TIPO_ELEMENTO === 17) {
                     divContent.innerHTML = `<div id="list-modal-${item.N_ID_MODAL}">${paintSubContent(data, item, "list-modal-" + item.N_ID_MODAL)}${ifDescripcion(item.T_DSC_MODAL)} </div><div id="viewerGeneric" style="display: none;"></div>`
                     divFooter.innerHTML = buildButtonsModals({ N_FK_TIPO_ELEMENTO: 100 }, "list-modal-" + item.N_ID_MODAL, "block");
+                } else if (item.N_FK_TIPO_ELEMENTO === 21) {
+                    divContent.innerHTML = `<div  class="rowInfo" id="infografia-modal-${item.N_ID_MODAL}"><ul id="ulTabs">${paintSubContent(data, item)}</ul><div id="tabCont" class="row mb-1 p-3 justify-content-center text-center"></div></div><div id="viewerGeneric" style="display: none;"></div>`;
+                    divFooter.innerHTML = buildButtonsModals({ N_FK_TIPO_ELEMENTO: 100 }, "infografia-modal-" + item.N_ID_MODAL, "grid");
                 }
             });
         }
@@ -69,6 +72,7 @@ $(document).ready(function () {
 
 //Paint html for modals
 function paintSubContent(list, item, idParent) {
+
     var child = "", listSbItem = list.filter(y => y.N_FK_PADRE === item.N_ID_MODAL);
     if (item.N_FK_TIPO_ELEMENTO === 14) {
         listSbItem.forEach(sbItem => {
@@ -103,9 +107,25 @@ function paintSubContent(list, item, idParent) {
             
         });
         return child;
+
     }
 
-    
+
+    if (item.N_FK_TIPO_ELEMENTO === 21) {
+        listSbItem.forEach(sbItem => {
+            //child += `<div class="card border" data-month="info-${sbItem.N_ID_MODAL}"><div class="card-header  bg-white  id="father-${sbItem.N_ID_MODAL}" onclick="printInfoContent(${sbItem.N_ID_MODAL} ,${item.N_ID_MODAL})"; type="button" data-toggle="collapse"
+            //                        href="#info-${sbItem.N_ID_MODAL}"  aria-controls="info-${sbItem.N_ID_MODAL}">
+            //                        <p class="font-weight-bold mb-0 p-2 ">${sbItem.T_VALOR_MODAL}</p>
+            //                    </div>
+            //                    </div>`;
+
+            child += `<li  data-month="info-${sbItem.N_ID_MODAL}" class="">
+                        <a href="#info-${sbItem.N_ID_MODAL}"  id="father-${sbItem.N_ID_MODAL}" onclick="printInfoContent(${sbItem.N_ID_MODAL} ,${item.N_ID_MODAL})" style="cursor:pointer;">${sbItem.T_VALOR_MODAL}</a>
+                    </li>`
+
+        });
+        return child;
+    }
 
     listSbItem.forEach((sbItem, index) => {
         if (sbItem.N_FK_TIPO_ELEMENTO === 0) {
@@ -135,6 +155,67 @@ function paintSubContent(list, item, idParent) {
         }
     });
     return child;
+}
+
+async function printInfoContent(item, idParent,) {
+    let data = JSON.parse(await postExecutionAPI('GetInfoModal', { _subQuery: "N_FK_SABER" + "|" + "5" }));
+    var child = "", listSbItem = data.filter(y => y.N_FK_PADRE === item), tabCont = $("#tabCont");
+    tabCont.empty();
+
+    console.log(listSbItem);
+
+
+    listSbItem.forEach((sbItem, index) => {
+        if (sbItem.N_FK_TIPO_ELEMENTO === 0) {
+            let searchChild = paintSubContent(list, sbItem, "infografia-modal-" + item.N_ID_MODAL);
+            let icon = sbItem.T_ICONO_MODAL != null ? `<img src='${sbItem.T_ICONO_MODAL}' alt='icono' style="width: 8%; margin-right: 1rem;"/>` : "";
+            child += `<div class="card border mt-${index === 0 ? '3' : '1'}"><div class="card-header  bg-white ${icon != "" ? "d-flex" : ""}" id="father-${sbItem.N_ID_MODAL}" type="button" data-toggle="collapse"
+                                    data-target="#collapse-${sbItem.N_ID_MODAL}" aria-expanded="true" aria-controls="collapse-${sbItem.N_ID_MODAL}">
+                                    ${icon} <p class="font-weight-bold mb-0 p-2 ">${sbItem.T_VALOR_MODAL}</p>
+                                </div>
+                                <div id="collapse-${sbItem.N_ID_MODAL}" class="collapse" aria-labelledby="father-${sbItem.N_ID_MODAL}" data-parent="#acordion-modal-${item.N_ID_MODAL}">
+                                    <div class="card-body">${searchChild} ${sbItem.T_DSC_MODAL !== null ? sbItem.T_DSC_MODAL : ""}</div>
+                                </div></div>`;
+        }
+        else if (sbItem.N_FK_TIPO_ELEMENTO === 5) {        
+            child += `<div class="col-4 my-2 "> 
+                        <div class="artInfografia pressGeneric" data-document="${sbItem.T_URL_MODAL}"  data-father="${"infografia-modal-" + idParent}" data-content="viewerGeneric" data-back="btnBackGeneric" data-type="${sbItem.N_FK_TIPO_ELEMENTO}" onclick="showElementsInModals(true, this); return false;">
+                            <img src="${sbItem.T_URL_MODAL}" alt="...">
+                            <div class="artConvenio-title d-flex align-items-center">
+                                <div class="text-center w-100">
+                                    <span>${sbItem.T_VALOR_MODAL}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;               
+        }
+        else if (sbItem.N_FK_TIPO_ELEMENTO === 10) {
+            child += `<div class="col-4 my-2 "> 
+                        <div class="artInfografia pressGeneric" data-document="${sbItem.T_URL_MODAL}"  data-father="${"infografia-modal-" + idParent}" data-content="viewerGeneric" data-back="btnBackGeneric" data-type="${sbItem.N_FK_TIPO_ELEMENTO}" onclick="showElementsInModals(true, this); return false;">
+                            <img src="${sbItem.T_ICONO_MODAL}" style=" width: 46%;" alt="...">
+                            <div class="artConvenio-title d-flex align-items-center">
+                                <div class="text-center w-100">
+                                    <span>${sbItem.T_VALOR_MODAL}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+        }
+        else if (sbItem.N_FK_TIPO_ELEMENTO !== 0) {
+            child += `<div class="d-flex justify-content-center align-items-center w-100 my-2 p-1 border ${sbItem.T_CLASS !== null ? `${sbItem.T_CLASS}` : ""}">
+                    <img src="${sbItem.T_ICONO_MODAL}" class="card-img-top" style="width:30px; height:30px" alt="...">
+                    <div class="font-weight-light w-90 pl-2">${sbItem.T_VALOR_MODAL} ${sbItem.T_DSC_MODAL !== null ? `<span class="text-muted">${sbItem.T_DSC_MODAL}</span>` : ""}</div>
+                    ${buildButtonsModals(sbItem, "infografia-modal-" + idParent)}
+            </div>`;
+        }
+    });
+
+
+    tabCont.append(child);
+    
+    console.log(item);
+    console.log(idParent);
+
 }
 
 //Aquí se construyen los botones acorde a su tipo y funcionalidad
@@ -226,6 +307,7 @@ function showElementsInModals(open, element, display) {
         $("#" + element.id).css("display", "none");
         $("#" + show).css("display", "none");
     } else {
+        //$("#" + father).attr('style', 'display: none !important');
         $("#" + father).css("display", "none");
         $("#" + back).css("display", "block");
         $("#" + show).css("display", "block");

@@ -69,7 +69,7 @@ function init(){
       fnHappyDays();
     });
     if (global) {
-      CreateGaleria();
+        CreateGaleria($('#yearsContainer').children().first().attr('id'));
     }    
     $(".chanGaleria").on("click", function () {
         CreateGaleria(this.id);

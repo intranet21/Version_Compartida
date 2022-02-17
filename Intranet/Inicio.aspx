@@ -184,7 +184,7 @@
     <!-- Modal Generic -->
     <!-- Modal Generic -->
     <div class="modal fade" id="generic-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div id="genericBody" class="modal-content">
                     
             </div>
